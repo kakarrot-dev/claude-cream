@@ -1,0 +1,134 @@
+/*
+ * Claude Cream — Typora Theme (Light)
+ * Inspired by Claude.com warm-canvas editorial design
+ * Author: KAKARROT
+ * License: MIT
+ */
+
+@import url(".claude-theme-base.css");
+
+/* ============================================================
+   1. :root — CSS Variables (from tokens.json)
+   ============================================================ */
+
+:root {
+    /* Colors — Light Palette */
+    --primary: #cc785c;
+    --primary-active: #a9583e;
+    --primary-disabled: #e6dfd8;
+    --ink: #141413;
+    --body: #3d3d3a;
+    --body-strong: #252523;
+    --muted: #6c6a64;
+    --muted-soft: #8e8b82;
+    --hairline: #e6dfd8;
+    --hairline-soft: #ebe6df;
+    --canvas: #faf9f5;
+    --surface-soft: #f5f0e8;
+    --surface-card: #efe9de;
+    --surface-cream-strong: #e8e0d2;
+    --surface-dark: #181715;
+    --surface-code: #ffffff;
+    --surface-dark-elevated: #252320;
+    --surface-dark-soft: #1f1e1b;
+    --on-primary: #ffffff;
+    --on-dark: #faf9f5;
+    --on-dark-soft: #a09d96;
+    --accent-teal: #5db8a6;
+    --accent-amber: #e8a55a;
+    --success: #5db872;
+    --warning: #d4a017;
+    --error: #c64545;
+    --code-inline-bg: #f3f3f0;
+    --code-border: #d1d1cc;
+    --code-normal: #1f2328;
+    --code-comment: #59636e;
+    --code-keyword: #cf222e;
+    --code-string: #0a3069;
+    --code-number: #0550ae;
+    --code-function: #8250df;
+    --code-type: #116329;
+    --code-property: #0550ae;
+    --code-operator: #1f2328;
+
+    /* Typography */
+    --font-body: "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+    --font-mono: "JetBrainsMono Nerd Font Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+    /* Spacing */
+    --sp-xxs: 4px;
+    --sp-xs: 8px;
+    --sp-sm: 12px;
+    --sp-md: 16px;
+    --sp-lg: 24px;
+    --sp-xl: 32px;
+    --sp-xxl: 48px;
+
+    /* Rounded */
+    --rd-sm: 6px;
+    --rd-md: 8px;
+    --rd-lg: 12px;
+    --rd-xl: 16px;
+    --rd-pill: 9999px;
+
+    /* Page */
+    --page-width: min(1000px, 92%);
+    --page-padding: 48px 24px 96px;
+}
+
+/* ============================================================
+   3. Typora Native Variable Overrides
+   ============================================================ */
+
+:root {
+    --text-color: #3d3d3a;
+    --primary-color: #cc785c;
+    --bg-color: #faf9f5;
+    --side-bar-bg-color: #f5f0e8;
+    --marker-color: #cc785c;
+    --source-color: #8e8b82;
+    --highlight-color: #fce5d0;
+    --header-span-color: var(--primary-color);
+    --block-bg-color: #f5f0e8;
+    --img-shadow-color: #e6dfd8;
+
+    --search-hit-bg-color: #fce5d0;
+    --search-select-bg-color: #cc785c;
+    --control-text-hover-color: #a9583e;
+    --rawblock-edit-panel-bd: #f5f0e8;
+    --item-hover-bg-color: #f5f0e8;
+    --active-file-bg-color: #efe9de;
+    --active-file-text-color: #141413;
+    --code-block-bg-color: #ffffff;
+    --code-block-text-color: #1f2328;
+    --select-text-bg-color: #fce5d0;
+    --select-text-font-color: #141413;
+    --cursor-color: #cc785c;
+    --border-color: #e6dfd8;
+    --window-border: 1px solid #e6dfd8;
+    --md-char-color: #8e8b82;
+    --meta-content-color: #8e8b82;
+    --typora-monospace: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* CodeMirror Highlight Colors (Light mode = dark window) */
+.cm-s-inner .cm-keyword { color: var(--code-keyword) !important; }
+.cm-s-inner .cm-operator { color: var(--code-operator) !important; }
+.cm-s-inner .cm-variable { color: var(--code-normal) !important; }
+.cm-s-inner .cm-variable-2 { color: var(--code-property) !important; }
+.cm-s-inner .cm-variable-3 { color: var(--code-type) !important; }
+.cm-s-inner .cm-type { color: var(--code-type) !important; }
+.cm-s-inner .cm-atom { color: var(--code-number) !important; }
+.cm-s-inner .cm-number { color: var(--code-number) !important; }
+.cm-s-inner .cm-def { color: var(--code-function) !important; }
+.cm-s-inner .cm-property { color: var(--code-property) !important; }
+.cm-s-inner .cm-builtin { color: var(--code-function) !important; }
+.cm-s-inner .cm-qualifier { color: var(--code-keyword) !important; }
+.cm-s-inner .cm-string { color: var(--code-string) !important; }
+.cm-s-inner .cm-string-2 { color: var(--code-string) !important; }
+.cm-s-inner .cm-comment { color: var(--code-comment) !important; font-style: italic; }
+.cm-s-inner .cm-tag { color: var(--code-type) !important; }
+.cm-s-inner .cm-attribute { color: var(--code-property) !important; }
+.cm-s-inner .cm-meta { color: var(--code-operator) !important; }
+.cm-s-inner .cm-header { color: var(--code-keyword) !important; }
+.cm-s-inner .cm-quote { color: var(--code-string) !important; }

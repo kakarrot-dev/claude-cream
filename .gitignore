@@ -1,0 +1,45 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# 编辑器/IDE 缓存
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 备份文件
+*.bak
+*.bak.md
+*.bak.ghostty
+*.backup
+*~
+
+# 临时文件
+*.tmp
+*.log
+
+# 本地私有配置（不同步）
+.claude/settings.local.json
+.env
+.env.local
+*.pem
+*.key
+
+# Node（如果将来加了 build script）
+node_modules/
+dist/
+
+# 只保留这些目录和文件
+/*
+!/themes/
+!/tokens/
+!/img/
+!/clients/
+!/LICENSE
+!/markdown-showcase.md
+!/README.md
+!/README.zh-CN.md
+!/.gitignore

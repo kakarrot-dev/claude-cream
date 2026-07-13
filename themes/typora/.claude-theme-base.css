@@ -1,0 +1,714 @@
+/*
+ * Claude Cream — Typora Theme Base
+ * Inspired by Claude.com warm-canvas editorial design
+ * Author: KAKARROT
+ * License: MIT
+ */
+
+/* 亮暗主题共享的排版与 Markdown 组件结构。 */
+
+:root {
+    --font-body: "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+    --font-mono: "JetBrainsMono Nerd Font Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --sp-xxs: 4px;
+    --sp-xs: 8px;
+    --sp-sm: 12px;
+    --sp-md: 16px;
+    --sp-lg: 24px;
+    --sp-xl: 32px;
+    --sp-xxl: 48px;
+    --rd-sm: 6px;
+    --rd-md: 8px;
+    --rd-lg: 12px;
+    --rd-xl: 16px;
+    --rd-pill: 9999px;
+    --page-width: min(1000px, 92%);
+    --page-padding: 48px 24px 96px;
+    --typora-monospace: var(--font-mono);
+}
+
+/* ============================================================
+   4. Base — Body / #write / Scrollbar / Selection
+   ============================================================ */
+
+html {
+    font-family: var(--font-body);
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--body);
+    background-color: var(--canvas);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#write {
+    max-width: var(--page-width);
+    padding: var(--page-padding);
+    font-size: 16px;
+    font-family: var(--font-body);
+    line-height: 1.65;
+    color: var(--body);
+    word-break: break-word;
+    word-wrap: break-word;
+    margin: 0 auto;
+}
+
+/* Selection */
+::selection {
+    background: var(--select-text-bg-color);
+    color: var(--select-text-font-color);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hairline);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-soft);
+}
+
+/* ============================================================
+   5. Typography — h1~h6 / p / strong / em / a
+   ============================================================ */
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+    font-family: var(--font-body);
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+}
+
+#write h1 {
+    font-size: 32px;
+    text-align: left;
+    padding-top: 0.5em;
+    margin-bottom: 0.6em;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 0.3em;
+}
+
+#write h2 {
+    font-size: 26px;
+}
+
+#write h3 {
+    font-size: 20px;
+}
+
+#write h4 {
+    font-size: 17px;
+}
+
+#write h5 {
+    font-size: 15px;
+}
+
+#write h6 {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+#write p {
+    margin: 0.6em 0;
+    line-height: 1.65;
+}
+
+#write strong {
+    font-weight: 600;
+    color: var(--body-strong);
+}
+
+#write em {
+    font-style: italic;
+}
+
+#write a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+#write a:hover {
+    color: var(--primary-active);
+}
+
+/* ============================================================
+   6. Code — Inline / Fenced / CodeMirror Highlighting
+   ============================================================ */
+
+/* Inline code */
+#write code {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--code-normal);
+    background-color: var(--code-inline-bg);
+    padding: 2px 8px;
+    border-radius: 4px;
+    word-break: break-word;
+}
+
+/* Fenced code block */
+.md-fences,
+.md-fences .CodeMirror {
+    font-family: var(--font-mono) !important;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.md-fences {
+    margin: 1.2em 0;
+    padding: 40px 20px 20px;
+    border-radius: var(--rd-md);
+    overflow: hidden;
+    border: 0.5px solid var(--code-border);
+    background-color: var(--code-block-bg-color);
+    box-shadow: none;
+}
+
+.md-fences[lang]::before {
+    content: attr(lang);
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.md-fences .cm-s-inner.CodeMirror {
+    background-color: var(--code-block-bg-color);
+    color: var(--code-block-text-color);
+    font-family: var(--font-mono);
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 0;
+    border-radius: var(--rd-md);
+}
+
+.CodeMirror-gutters {
+    border-right: 0.5px solid var(--code-border);
+    background-color: var(--code-block-bg-color);
+    padding-right: 0;
+    min-width: 40px;
+}
+
+.CodeMirror-linenumber {
+    color: var(--muted);
+    padding: 0 12px 0 8px;
+    font-size: 12px;
+}
+
+.CodeMirror-lines {
+    padding: 0;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    color: var(--on-dark) !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.cm-s-inner div.CodeMirror-selected {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 2px solid var(--primary);
+}
+
+/* ============================================================
+   7. Blockquote / List / Task List
+   ============================================================ */
+
+blockquote {
+    display: block;
+    border-left: 3px solid var(--primary);
+    background-color: var(--surface-soft);
+    margin: 1em 0;
+    padding: 12px 20px;
+    border-radius: 0 var(--rd-md) var(--rd-md) 0;
+    color: var(--body);
+    font-size: 0.95em;
+}
+
+blockquote blockquote {
+    margin: 0.5em 0;
+}
+
+/* Lists */
+#write ul,
+#write ol {
+    padding-left: 24px;
+    margin: 0.5em 0;
+}
+
+#write li {
+    margin: 0.3em 0;
+}
+
+::marker {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Task List */
+#write li.md-task-list-item,
+#write li.task-list-item {
+    list-style-type: none;
+}
+
+#write li.md-task-list-item > input[type="checkbox"],
+#write li.task-list-item > input[type="checkbox"] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: -1.2em;
+    margin-top: calc(1em - 10px);
+    border: 1.5px solid var(--muted-soft);
+    border-radius: 4px;
+    background-color: var(--canvas);
+    cursor: pointer;
+}
+
+#write li.md-task-list-item > input[type="checkbox"]:checked,
+#write li.task-list-item > input[type="checkbox"]:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m3 8 3 3 7-7' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 11px;
+}
+
+/* ============================================================
+   8. Table / Image / HR / Footnote / Highlight / kbd
+   ============================================================ */
+
+/* Table */
+#write .md-table {
+    margin: 1em 0;
+    overflow-x: auto;
+}
+
+#write table {
+    width: max-content;
+    min-width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 0.95em;
+}
+
+#write table tr {
+    border-top: 1px solid var(--hairline);
+}
+
+#write table tr th,
+#write table tr td {
+    border: 1px solid var(--hairline);
+    padding: 8px 14px;
+    text-align: left;
+}
+
+#write table tr th {
+    background-color: var(--surface-soft);
+    font-weight: 600;
+    color: var(--ink);
+}
+
+#write table tr:nth-child(even) td {
+    background-color: var(--hairline-soft);
+}
+
+/* Image */
+#write img {
+    max-width: 100%;
+    vertical-align: middle;
+    border-radius: var(--rd-sm);
+}
+
+#write p > img:only-child {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Horizontal Rule */
+hr {
+    border: none;
+    border-top: 1px solid var(--hairline);
+    margin: 2em 0;
+}
+
+/* Footnote */
+sup.md-footnote {
+    background-color: var(--surface-soft);
+    color: var(--primary);
+    padding: 0 4px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.md-def-name {
+    color: var(--primary);
+}
+
+/* Highlight */
+mark {
+    background: var(--select-text-bg-color);
+    padding: 1px 4px;
+    border-radius: 2px;
+    color: var(--ink);
+}
+
+/* kbd (keyboard) */
+kbd {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    padding: 2px 8px;
+    border-radius: var(--rd-sm);
+    border: 1px solid var(--hairline);
+    background-color: var(--surface-soft);
+    box-shadow: 0 1px 0 var(--hairline);
+}
+
+/* ============================================================
+   9. Sidebar / Outline / File Tree / Top Bar / Status Bar
+   ============================================================ */
+
+/* Sidebar */
+#typora-sidebar {
+    background-color: var(--side-bar-bg-color);
+    color: var(--body);
+    font-family: var(--font-body);
+    font-size: 14px;
+    border-right: 1px solid var(--hairline);
+}
+
+/* File Tree */
+.file-tree-node {
+    color: var(--body);
+}
+
+.file-tree-node.active > .file-node-background {
+    background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active > .file-node-content {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.file-node-content {
+    color: var(--body);
+    line-height: 1.6;
+}
+
+.file-node-icon {
+    margin-right: 4px;
+}
+
+/* Outline */
+#outline-content {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.outline-item {
+    padding-left: 1.5em;
+}
+
+#outline-content .outline-active,
+.pin-outline .outline-active {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Info Panel Tabs */
+.info-panel-tab {
+    color: var(--muted);
+}
+
+.info-panel-tab.active {
+    color: var(--primary);
+}
+
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border,
+.ty-show-search #info-panel-tab-search .info-panel-tab-border {
+    background-color: var(--primary);
+    height: 2px;
+    border-radius: 2px;
+}
+
+/* Top Bar */
+#top-title-bar {
+    background-color: var(--canvas);
+    border-bottom: 1px solid var(--hairline);
+}
+
+/* Status Bar */
+footer#footer {
+    background-color: var(--surface-soft);
+    border-top: 1px solid var(--hairline);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+#footer-word-count {
+    color: var(--muted);
+}
+
+/* ============================================================
+   10. Modal / Button / Input / Context Menu
+   ============================================================ */
+
+/* Context Menu */
+.context-menu {
+    background-color: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rd-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 4px 0;
+}
+
+.context-menu-item {
+    color: var(--body);
+    padding: 6px 16px;
+}
+
+.context-menu-item.hover {
+    background-color: var(--surface-soft);
+    color: var(--ink);
+}
+
+/* Modal */
+.modal-content {
+    background-color: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rd-lg);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Button */
+.btn {
+    background-color: var(--surface-soft);
+    color: var(--body);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rd-md);
+    padding: 6px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--surface-card);
+    color: var(--ink);
+}
+
+.btn.primary {
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border-color: var(--primary);
+}
+
+.btn.primary:hover {
+    background-color: var(--primary-active);
+}
+
+/* Input */
+input[type="text"],
+input[type="search"],
+input[type="url"],
+input[type="email"] {
+    background-color: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rd-sm);
+    padding: 6px 12px;
+    color: var(--body);
+    font-family: var(--font-body);
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(204, 120, 92, 0.15);
+}
+
+/* Dropdown */
+select {
+    background-color: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rd-sm);
+    padding: 4px 8px;
+    color: var(--body);
+    font-family: var(--font-body);
+    font-size: 14px;
+}
+
+/* Search Panel */
+.searchpanel-search-option-btn {
+    border: 1px solid var(--hairline);
+    border-radius: var(--rd-sm);
+    background-color: var(--canvas);
+    cursor: pointer;
+}
+
+/* ============================================================
+   11. YAML Frontmatter / TOC / Math / Mermaid / Alert
+   ============================================================ */
+
+/* YAML Frontmatter */
+pre.md-meta-block {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--muted-soft);
+    background-color: var(--surface-soft);
+    padding: 16px 20px;
+    border-radius: var(--rd-md);
+    margin-bottom: 2em;
+    border-left: 3px solid var(--primary);
+    line-height: 1.6;
+}
+
+/* TOC */
+.md-toc {
+    margin: 1em 0;
+}
+
+.md-toc-content {
+    font-family: var(--font-body);
+    line-height: 1.8;
+}
+
+.md-toc-item {
+    color: var(--body);
+}
+
+.md-toc-item a {
+    color: var(--body);
+    text-decoration: none;
+}
+
+.md-toc-item a:hover {
+    color: var(--primary);
+}
+
+/* Math */
+.md-inline-math script {
+    color: var(--primary);
+}
+
+/* Mermaid */
+.md-fences .mermaid {
+    background-color: var(--canvas);
+    border-radius: var(--rd-lg);
+    padding: 16px;
+}
+
+/* Alert (GitHub Flavored Markdown) */
+.md-alert {
+    border-left: 3px solid var(--primary);
+    padding: 12px 20px;
+    margin: 1em 0;
+    border-radius: 0 var(--rd-md) var(--rd-md) 0;
+    background-color: var(--surface-soft);
+}
+
+.md-alert-text-container {
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.md-alert-text-note {
+    color: var(--accent-teal);
+}
+
+.md-alert.md-alert-note {
+    background-color: rgba(93, 184, 166, 0.06);
+    border-left-color: var(--accent-teal);
+}
+
+.md-alert-text-tip {
+    color: var(--success);
+}
+
+.md-alert.md-alert-tip {
+    background-color: rgba(93, 184, 114, 0.06);
+    border-left-color: var(--success);
+}
+
+.md-alert-text-important {
+    color: var(--primary);
+}
+
+.md-alert.md-alert-important {
+    background-color: rgba(204, 120, 92, 0.06);
+    border-left-color: var(--primary);
+}
+
+.md-alert-text-warning {
+    color: var(--warning);
+}
+
+.md-alert.md-alert-warning {
+    background-color: rgba(212, 160, 23, 0.06);
+    border-left-color: var(--warning);
+}
+
+.md-alert-text-caution {
+    color: var(--error);
+}
+
+.md-alert.md-alert-caution {
+    background-color: rgba(198, 69, 69, 0.06);
+    border-left-color: var(--error);
+}
+
+
+/* Print / Export */
+@media print {
+    #write { padding: 0; max-width: 100%; }
+    ::-webkit-scrollbar-thumb { background-color: transparent !important; }
+    body { background-color: #ffffff; }
+    .typora-export { margin: 0; padding: 0; }
+    .typora-export #write { padding: 20mm 15mm; }
+    .typora-export .md-fences .cm-s-inner.CodeMirror {
+        background-color: var(--code-block-bg-color);
+        color: var(--code-block-text-color);
+    }
+    @page { margin: 0; }
+}
+

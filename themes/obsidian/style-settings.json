@@ -1,0 +1,122 @@
+{
+  "claude-cream-theme": {
+    "title": "Claude Cream",
+    "description": "Theme settings for Claude Cream",
+    "advanced": {
+      "title": "Advanced",
+      "description": "Fine-tune the theme appearance"
+    }
+  },
+  "claude-cream-theme__accent": {
+    "title": "Accent Color",
+    "description": "Choose your accent color",
+    "type": "variable-select",
+    "defaultValue": "var(--claude-primary)",
+    "options": [
+      {
+        "label": "Coral (default)",
+        "value": "var(--claude-primary)"
+      },
+      {
+        "label": "Teal",
+        "value": "#5db8a6"
+      },
+      {
+        "label": "Amber",
+        "value": "#e8a55a"
+      },
+      {
+        "label": "Green",
+        "value": "#5db872"
+      }
+    ],
+    "scope": "body",
+    "ca-var": "--interactive-accent",
+    "target": "--interactive-accent"
+  },
+  "claude-cream-theme__font-size": {
+    "title": "Body Font Size",
+    "type": "variable-number-slider",
+    "defaultValue": 16,
+    "min": 14,
+    "max": 20,
+    "step": 1,
+    "description": "Base body text size (px)",
+    "scope": "body",
+    "ca-var": "--font-text-size",
+    "target": "--font-text-size"
+  },
+  "claude-cream-theme__code-size": {
+    "title": "Code Font Size",
+    "type": "variable-number-slider",
+    "defaultValue": 14,
+    "min": 12,
+    "max": 18,
+    "step": 1,
+    "description": "Monospace/code font size (px)",
+    "scope": "body",
+    "ca-var": "--font-monospace-size",
+    "target": "--font-monospace-size"
+  },
+  "claude-cream-theme__line-width": {
+    "title": "Page Width",
+    "type": "variable-number-slider",
+    "defaultValue": 760,
+    "min": 600,
+    "max": 1200,
+    "step": 10,
+    "description": "Maximum content width (px)",
+    "scope": "body",
+    "ca-var": "--line-width",
+    "target": "--line-width"
+  },
+  "claude-cream-theme__rounded": {
+    "title": "Roundness Strength",
+    "type": "variable-select",
+    "defaultValue": "var(--radius-m)",
+    "options": [
+      {
+        "label": "Sharp",
+        "value": "2px"
+      },
+      {
+        "label": "Default (coral)",
+        "value": "var(--radius-m)"
+      },
+      {
+        "label": "Rounded",
+        "value": "16px"
+      }
+    ],
+    "scope": "body",
+    "ca-var": "--radius-m",
+    "target": "--radius-m"
+  },
+  "claude-cream-theme__show-line-numbers": {
+    "title": "Show Line Numbers",
+    "type": "class-toggle",
+    "defaultValue": false,
+    "description": "Toggle line numbers in code blocks",
+    "scope": "body",
+    "addIsActive": "claude-show-line-numbers"
+  },
+  "claude-cream-theme__heading-font": {
+    "title": "Heading Font",
+    "type": "variable-select",
+    "defaultValue": "var(--font-text)",
+    "options": [
+      {
+        "label": "Body font (default)",
+        "value": "var(--font-text)"
+      },
+      {
+        "label": "Monospace",
+        "value": "var(--font-monospace)"
+      }
+    ],
+    "scope": "body",
+    "ca-var": "--h1-font",
+    "target": "--h1-font",
+    "description": "Font family for headings"
+  }
+}

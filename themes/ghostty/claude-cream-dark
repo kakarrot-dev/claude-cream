@@ -1,0 +1,53 @@
+# ============================================================
+#  Claude Cream Dark — Ghostty Theme
+#  深墨黑底 + 珊瑚橙提亮 + 米色文字
+#  基于 Claude.com dark 变体 token
+# ============================================================
+
+# 主体背景 & 前景
+background = 181715
+foreground = d4d1c8
+
+# 光标（提亮珊瑚 #e08b6f）
+cursor-color = e08b6f
+cursor-text  = 141413
+
+# 选中区
+selection-background = 3d3934
+selection-foreground = faf9f5
+
+# ── ANSI 16 色（Dark 变体：整体提亮 + 保持 Claude 色调）──────
+
+# 0  Black / 更深底
+palette = 0=0f0e0d
+# 1  Red
+palette = 1=e06565
+# 2  Green
+palette = 2=7fd490
+# 3  Yellow
+palette = 3=e8ba3d
+# 4  Blue（Claude 无蓝调；用提亮青绿）
+palette = 4=7fd4c2
+# 5  Magenta / 提亮珊瑚
+palette = 5=e08b6f
+# 6  Cyan / 提亮 accent-teal
+palette = 6=9fd4c2
+# 7  White / 米色正文
+palette = 7=d4d1c8
+
+# 8  Bright Black / 暖灰
+palette = 8=a09d96
+# 9  Bright Red
+palette = 9=f28080
+# 10 Bright Green
+palette = 10=9fe0a5
+# 11 Bright Yellow / 提亮琥珀
+palette = 11=f2b877
+# 12 Bright Blue
+palette = 12=b0e0d0
+# 13 Bright Magenta / 更亮珊瑚
+palette = 13=f0a48a
+# 14 Bright Cyan
+palette = 14=b8dcd0
+# 15 Bright White
+palette = 15=faf9f5
