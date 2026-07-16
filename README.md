@@ -1,4 +1,12 @@
-# Claude Cream
+<p align="center">
+  <img src="img/brand/logo.svg" width="112" alt="Claude Cream logo">
+</p>
+
+<h1 align="center">Claude Cream</h1>
+
+<p align="center">
+  <img src="img/brand/banner.svg" width="100%" alt="Claude Cream banner">
+</p>
 
 > Palette: cream + coral · Mode: light + dark · Font: PingFang SC + JetBrainsMono Nerd Font Mono · License: [MIT](./LICENSE)
 

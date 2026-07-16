@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Cream Logo</title>
+  <desc id="desc">珊瑚色圆角方形中，由字母 C 与纸张折角组成的奶油色标志。</desc>
+  <rect x="16" y="16" width="224" height="224" rx="50" fill="#cc785c"/>
+  <path
+    d="M165 88C137 61 88 66 65 101C43 135 60 181 100 193C128 202 158 191 178 168"
+    fill="none"
+    stroke="#faf9f5"
+    stroke-linecap="round"
+    stroke-width="30"
+  />
+  <path d="M158 16H190L240 66V98H194C174 98 158 82 158 62Z" fill="#faf9f5"/>
+  <path d="M190 16V54C190 61 195 66 202 66H240Z" fill="#e8e0d2"/>
+</svg>

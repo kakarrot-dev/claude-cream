@@ -1,4 +1,12 @@
-# Claude Cream
+<p align="center">
+  <img src="img/brand/logo.svg" width="112" alt="Claude Cream Logo">
+</p>
+
+<h1 align="center">Claude Cream</h1>
+
+<p align="center">
+  <img src="img/brand/banner.svg" width="100%" alt="Claude Cream 项目横幅">
+</p>
 
 [![Palette](https://img.shields.io/badge/palette-cream_+_coral-cc785c)](https://github.com/kakarrot0109/claude-cream)
 [![Mode](https://img.shields.io/badge/mode-light_+_dark-181715)](https://github.com/kakarrot0109/claude-cream)

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Cream</title>
+  <desc id="desc">Claude Cream 暖色编辑工作台项目横幅。</desc>
+  <rect width="1200" height="360" rx="24" fill="#faf9f5"/>
+  <rect width="16" height="360" rx="8" fill="#cc785c"/>
+  <path d="M950 0H1176C1189 0 1200 11 1200 24V336C1200 349 1189 360 1176 360H950Z" fill="#181715"/>
+  <circle cx="1114" cy="72" r="122" fill="#252320"/>
+  <circle cx="1040" cy="318" r="86" fill="#1f1e1b"/>
+
+  <g transform="translate(72 68) scale(.875)">
+    <rect x="16" y="16" width="224" height="224" rx="50" fill="#cc785c"/>
+    <path
+      d="M165 88C137 61 88 66 65 101C43 135 60 181 100 193C128 202 158 191 178 168"
+      fill="none"
+      stroke="#faf9f5"
+      stroke-linecap="round"
+      stroke-width="30"
+    />
+    <path d="M158 16H190L240 66V98H194C174 98 158 82 158 62Z" fill="#faf9f5"/>
+    <path d="M190 16V54C190 61 195 66 202 66H240Z" fill="#e8e0d2"/>
+  </g>
+
+  <text
+    x="340"
+    y="158"
+    fill="#181715"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="72"
+    font-weight="600"
+    letter-spacing="-2"
+  >Claude Cream</text>
+  <rect x="342" y="185" width="84" height="6" rx="3" fill="#cc785c"/>
+  <text
+    x="340"
+    y="232"
+    fill="#6c6a64"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="24"
+  >A warm editorial workspace for writing and code</text>
+
+  <g
+    fill="#faf9f5"
+    font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace"
+    font-size="18"
+  >
+    <text x="994" y="140">Typora</text>
+    <text x="994" y="178">Obsidian</text>
+    <text x="994" y="216">Ghostty</text>
+    <text x="994" y="254">AI CLI</text>
+  </g>
+  <g fill="#e08b6f">
+    <circle cx="976" cy="134" r="4"/>
+    <circle cx="976" cy="172" r="4"/>
+    <circle cx="976" cy="210" r="4"/>
+    <circle cx="976" cy="248" r="4"/>
+  </g>
+</svg>
