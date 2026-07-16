@@ -10,10 +10,10 @@
 
 > Palette: cream + coral · Mode: light + dark · Font: PingFang SC + JetBrainsMono Nerd Font Mono · License: [MIT](./LICENSE)
 
-[![Palette](https://img.shields.io/badge/palette-cream_+_coral-cc785c)](https://github.com/kakarrot0109/claude-cream)
-[![Mode](https://img.shields.io/badge/mode-light_+_dark-181715)](https://github.com/kakarrot0109/claude-cream)
-[![Font](https://img.shields.io/badge/font-PingFang_SC_+_JetBrains_Mono-3d3d3a)](https://github.com/kakarrot0109/claude-cream)
-[![Platform](https://img.shields.io/badge/platform-Typora_%7C_Obsidian_%7C_Ghostty_%7C_CLI-dccebf)](https://github.com/kakarrot0109/claude-cream)
+[![Palette](https://img.shields.io/badge/palette-cream_+_coral-cc785c)](https://github.com/kakarrot-dev/claude-cream)
+[![Mode](https://img.shields.io/badge/mode-light_+_dark-181715)](https://github.com/kakarrot-dev/claude-cream)
+[![Font](https://img.shields.io/badge/font-PingFang_SC_+_JetBrains_Mono-3d3d3a)](https://github.com/kakarrot-dev/claude-cream)
+[![Platform](https://img.shields.io/badge/platform-Typora_%7C_Obsidian_%7C_Ghostty_%7C_CLI-dccebf)](https://github.com/kakarrot-dev/claude-cream)
 [![License](https://img.shields.io/badge/license-MIT-cc785c)](./LICENSE)
 
 [中文版](README.zh-CN.md)
@@ -160,4 +160,4 @@ MIT &mdash; see [LICENSE](./LICENSE).
 
 ---
 
-Made with &#x2615; + coral by [KAKARROT](https://github.com/kakarrot0109)
+Made with &#x2615; + coral by [KAKARROT](https://github.com/kakarrot-dev)

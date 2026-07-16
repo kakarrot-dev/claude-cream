@@ -8,9 +8,9 @@
   <img src="img/brand/banner.svg" width="100%" alt="Claude Cream 项目横幅">
 </p>
 
-[![Palette](https://img.shields.io/badge/palette-cream_+_coral-cc785c)](https://github.com/kakarrot0109/claude-cream)
-[![Mode](https://img.shields.io/badge/mode-light_+_dark-181715)](https://github.com/kakarrot0109/claude-cream)
-[![Font](https://img.shields.io/badge/font-PingFang_SC_+_JetBrains_Mono-3d3d3a)](https://github.com/kakarrot0109/claude-cream)
+[![Palette](https://img.shields.io/badge/palette-cream_+_coral-cc785c)](https://github.com/kakarrot-dev/claude-cream)
+[![Mode](https://img.shields.io/badge/mode-light_+_dark-181715)](https://github.com/kakarrot-dev/claude-cream)
+[![Font](https://img.shields.io/badge/font-PingFang_SC_+_JetBrains_Mono-3d3d3a)](https://github.com/kakarrot-dev/claude-cream)
 [![License](https://img.shields.io/badge/license-MIT-5db872)](./LICENSE)
 
 暖色调编辑工作台 —— 覆盖 Typora / Obsidian / Ghostty 与 AI CLI 的统一设计系统。
@@ -137,4 +137,4 @@ MIT &mdash; 详见 [LICENSE](./LICENSE)。
 
 ---
 
-用 &#x2615; + 珊瑚橙制作 by [KAKARROT](https://github.com/kakarrot0109)
+用 &#x2615; + 珊瑚橙制作 by [KAKARROT](https://github.com/kakarrot-dev)
