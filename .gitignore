@@ -32,6 +32,9 @@
 node_modules/
 dist/
 
+# 本地任务草稿（不入库）
+/tasks/
+
 # 只保留这些目录和文件
 /*
 !/themes/
@@ -42,4 +45,6 @@ dist/
 !/markdown-showcase.md
 !/README.md
 !/README.zh-CN.md
+!/AGENTS.md
+!/CLAUDE.md
 !/.gitignore
