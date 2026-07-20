@@ -48,3 +48,6 @@ dist/
 !/AGENTS.md
 !/CLAUDE.md
 !/.gitignore
+
+# Agent 本地任务与规格（不入库）
+tasks/
