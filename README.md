@@ -32,24 +32,6 @@ Inspired by the [Claude.com](https://claude.com) visual language: layered warm s
 - **Chinese-first typography** — PingFang SC system font for prose, JetBrains Mono for code
 - **One design language, four platforms** — Typora, Obsidian, Ghostty themes + CLI configs, all aligned
 
-## Gallery
-
-### Typora — Light
-
-![Typora Light](img/showcase/typora-1.png)
-
-### Typora — Dark
-
-![Typora Dark](img/showcase/typora-2.png)
-
-### Obsidian — Light
-
-![Obsidian Light](img/showcase/obsidian-1.png)
-
-### Obsidian — Dark
-
-![Obsidian Dark](img/showcase/obsidian-2.png)
-
 ## What's Inside
 
 ```
