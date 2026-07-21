@@ -13,43 +13,43 @@
 
 :root {
     /* Colors — Light Palette */
-    --primary: #cc785c;
-    --primary-active: #a9583e;
-    --primary-disabled: #e6dfd8;
-    --ink: #141413;
-    --body: #3d3d3a;
-    --body-strong: #252523;
-    --muted: #6c6a64;
-    --muted-soft: #8e8b82;
-    --hairline: #e6dfd8;
-    --hairline-soft: #ebe6df;
-    --canvas: #faf9f5;
-    --surface-soft: #f5f0e8;
-    --surface-card: #efe9de;
-    --surface-cream-strong: #e8e0d2;
-    --surface-dark: #181715;
+    --primary: #b7791f;
+    --primary-active: #9f6819;
+    --primary-disabled: #ddd7c6;
+    --ink: #29271d;
+    --body: #403d36;
+    --body-strong: #302e28;
+    --muted: #6d675b;
+    --muted-soft: #8d8575;
+    --hairline: #d8d2c3;
+    --hairline-soft: #e5e0d4;
+    --canvas: #f5f3e9;
+    --surface-soft: #f8f7f2;
+    --surface-card: #ffffff;
+    --surface-cream-strong: #f0eee6;
+    --surface-dark: #2a2b2a;
     --surface-code: #ffffff;
-    --surface-dark-elevated: #252320;
-    --surface-dark-soft: #1f1e1b;
-    --on-primary: #ffffff;
-    --on-dark: #faf9f5;
-    --on-dark-soft: #a09d96;
-    --accent-teal: #5db8a6;
-    --accent-amber: #e8a55a;
-    --success: #5db872;
-    --warning: #d4a017;
-    --error: #c64545;
-    --code-inline-bg: #f3f3f0;
-    --code-border: #d1d1cc;
-    --code-normal: #1f2328;
-    --code-comment: #59636e;
-    --code-keyword: #cf222e;
-    --code-string: #0a3069;
-    --code-number: #0550ae;
-    --code-function: #8250df;
-    --code-type: #116329;
-    --code-property: #0550ae;
-    --code-operator: #1f2328;
+    --surface-dark-elevated: #343533;
+    --surface-dark-soft: #30312f;
+    --on-primary: #fff8f3;
+    --on-dark: #f8f7f2;
+    --on-dark-soft: #bbb6a8;
+    --accent-teal: #2c6f75;
+    --accent-amber: #b7791f;
+    --success: #4b6f3d;
+    --warning: #8a5e16;
+    --error: #7c1b13;
+    --code-inline-bg: rgba(61, 57, 41, 0.06);
+    --code-border: #d8d2c3;
+    --code-normal: #2f3440;
+    --code-comment: #80796c;
+    --code-keyword: #6f3f82;
+    --code-string: #536b2c;
+    --code-number: #8a5e16;
+    --code-function: #8a5e16;
+    --code-type: #4f6f2b;
+    --code-property: #4f6f2b;
+    --code-operator: #4c463b;
 
     /* Typography */
     --font-body: "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
@@ -81,33 +81,33 @@
    ============================================================ */
 
 :root {
-    --text-color: #3d3d3a;
-    --primary-color: #cc785c;
-    --bg-color: #faf9f5;
-    --side-bar-bg-color: #f5f0e8;
-    --marker-color: #cc785c;
-    --source-color: #8e8b82;
-    --highlight-color: #fce5d0;
+    --text-color: var(--body);
+    --primary-color: var(--primary);
+    --bg-color: var(--canvas);
+    --side-bar-bg-color: var(--surface-soft);
+    --marker-color: var(--primary);
+    --source-color: var(--muted-soft);
+    --highlight-color: rgba(183, 121, 31, 0.16);
     --header-span-color: var(--primary-color);
-    --block-bg-color: #f5f0e8;
-    --img-shadow-color: #e6dfd8;
+    --block-bg-color: var(--surface-soft);
+    --img-shadow-color: var(--hairline);
 
-    --search-hit-bg-color: #fce5d0;
-    --search-select-bg-color: #cc785c;
-    --control-text-hover-color: #a9583e;
-    --rawblock-edit-panel-bd: #f5f0e8;
-    --item-hover-bg-color: #f5f0e8;
-    --active-file-bg-color: #efe9de;
-    --active-file-text-color: #141413;
-    --code-block-bg-color: #ffffff;
-    --code-block-text-color: #1f2328;
-    --select-text-bg-color: #fce5d0;
-    --select-text-font-color: #141413;
-    --cursor-color: #cc785c;
-    --border-color: #e6dfd8;
-    --window-border: 1px solid #e6dfd8;
-    --md-char-color: #8e8b82;
-    --meta-content-color: #8e8b82;
+    --search-hit-bg-color: rgba(183, 121, 31, 0.16);
+    --search-select-bg-color: var(--primary);
+    --control-text-hover-color: var(--primary-active);
+    --rawblock-edit-panel-bd: var(--surface-soft);
+    --item-hover-bg-color: var(--surface-soft);
+    --active-file-bg-color: var(--surface-cream-strong);
+    --active-file-text-color: var(--ink);
+    --code-block-bg-color: var(--surface-code);
+    --code-block-text-color: var(--code-normal);
+    --select-text-bg-color: rgba(183, 121, 31, 0.16);
+    --select-text-font-color: var(--ink);
+    --cursor-color: var(--primary);
+    --border-color: var(--hairline);
+    --window-border: 1px solid var(--hairline);
+    --md-char-color: var(--muted-soft);
+    --meta-content-color: var(--muted-soft);
     --typora-monospace: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
 

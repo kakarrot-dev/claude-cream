@@ -8,22 +8,22 @@
   <img src="img/brand/banner.svg" width="100%" alt="Claude Cream 项目横幅">
 </p>
 
-[![Palette](https://img.shields.io/badge/palette-cream_+_coral-cc785c)](https://github.com/kakarrot-dev/claude-cream)
-[![Mode](https://img.shields.io/badge/mode-light_+_dark-181715)](https://github.com/kakarrot-dev/claude-cream)
+[![Palette](https://img.shields.io/badge/palette-warm_ivory_+_amber-b7791f)](https://github.com/kakarrot-dev/claude-cream)
+[![Mode](https://img.shields.io/badge/mode-light_+_dark-2d2e2d)](https://github.com/kakarrot-dev/claude-cream)
 [![Font](https://img.shields.io/badge/font-PingFang_SC_+_JetBrains_Mono-3d3d3a)](https://github.com/kakarrot-dev/claude-cream)
 [![License](https://img.shields.io/badge/license-MIT-5db872)](./LICENSE)
 
 暖色调编辑工作台 —— 覆盖 Typora / Obsidian / Ghostty 与 AI CLI 的统一设计系统。
 
-设计灵感来自 [Claude.com](https://claude.com) 的视觉语言：温暖的画布、克制的珊瑚色、以及让代码看起来像印刷物而非工业面板的排版质感。
+设计灵感来自 [Claude.com](https://claude.com) 的视觉语言：有层次的暖色表面、克制的琥珀金，以及让代码看起来像印刷物而非工业面板的排版质感。
 
 ---
 
 ## 特点
 
-- **暖米黄画布** `#faf9f5` &mdash; 不是纯白，像一张温润的纸
-- **珊瑚橙强调** `#cc785c` &mdash; 签名色，人文而不刺眼
-- **深墨代码窗** `#181715` &mdash; 反差留白，让代码有仪式感
+- **暖象牙画布** `#f5f3e9` &mdash; 避免冷白，并通过表面层次保持温润
+- **琥珀金强调** `#b7791f` &mdash; 克制、温暖，同时清晰表达交互状态
+- **暖炭灰深色画布** `#2d2e2d` &mdash; 保持深度而不使用生硬纯黑
 - **中文优先排版** &mdash; 正文用 PingFang SC 系统字体，代码用 JetBrains Mono
 - **一套设计语言，四个平台** &mdash; Typora / Obsidian / Ghostty 主题 + AI CLI 配置全部对齐
 
@@ -137,4 +137,4 @@ MIT &mdash; 详见 [LICENSE](./LICENSE)。
 
 ---
 
-用 &#x2615; + 珊瑚橙制作 by [KAKARROT](https://github.com/kakarrot-dev)
+用 &#x2615; + 琥珀金制作 by [KAKARROT](https://github.com/kakarrot-dev)

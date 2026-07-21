@@ -14,20 +14,20 @@
     "defaultValue": "var(--claude-primary)",
     "options": [
       {
-        "label": "Coral (default)",
+        "label": "Amber (default)",
         "value": "var(--claude-primary)"
       },
       {
         "label": "Teal",
-        "value": "#5db8a6"
-      },
-      {
-        "label": "Amber",
-        "value": "#e8a55a"
+        "value": "#2c6f75"
       },
       {
         "label": "Green",
-        "value": "#5db872"
+        "value": "#4b6f3d"
+      },
+      {
+        "label": "Red",
+        "value": "#7c1b13"
       }
     ],
     "scope": "body",
@@ -80,7 +80,7 @@
         "value": "2px"
       },
       {
-        "label": "Default (coral)",
+        "label": "Default",
         "value": "var(--radius-m)"
       },
       {

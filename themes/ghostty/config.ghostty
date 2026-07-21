@@ -6,8 +6,8 @@
 
 
 # ── 自动主题切换（Claude Cream 双模式）────────────────────────
-# Light  → Claude Cream Light（暖米黄底 #faf9f5 + 珊瑚橙 #cc785c）
-# Dark   → Claude Cream Dark（深墨黑底 #181715 + 珊瑚橙 #e08b6f）
+# Light  → Claude Cream Light（暖象牙底 #f5f3e9 + 琥珀金 #b7791f）
+# Dark   → Claude Cream Dark（暖炭灰底 #2d2e2d + 柔和金 #e6bf7a）
 # 主题定义在文件末尾（Ghostty 支持内联多主题定义）
 theme = light:claude-cream-light,dark:claude-cream-dark
 window-theme = auto

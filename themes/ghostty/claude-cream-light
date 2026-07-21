@@ -1,20 +1,20 @@
 # ============================================================
 #  Claude Cream Light — Ghostty Theme
-#  暖米黄画布 + 珊瑚橙强调 + 深墨文字
-#  基于 Claude.com 官方视觉 token（DESIGN-claude.md）
+#  暖象牙画布 + 琥珀金强调 + 暖褐文字
+#  映射自 tokens/tokens.json
 # ============================================================
 
 # 主体背景 & 前景
-background = faf9f5
-foreground = 3d3d3a
+background = f5f3e9
+foreground = 403d36
 
-# 光标（珊瑚橙）
-cursor-color = cc785c
-cursor-text  = faf9f5
+# 光标（琥珀金）
+cursor-color = b7791f
+cursor-text  = fff8f3
 
-# 选中区（淡珊瑚 + 深墨文字）
-selection-background = fce5d0
-selection-foreground = 141413
+# 选中区（浅金 + 暖褐文字）
+selection-background = e2bc67
+selection-foreground = 29271d
 
 # ── ANSI 16 色 ────────────────────────────────────────────────
 # 0-7 标准色，8-15 亮色变体
@@ -22,35 +22,35 @@ selection-foreground = 141413
 # 未定义的槽位用调色板衍生色补齐
 
 # 0  Black / 深墨
-palette = 0=141413
+palette = 0=29271d
 # 1  Red / 错误红
-palette = 1=c64545
+palette = 1=7c1b13
 # 2  Green / 成功绿
-palette = 2=5db872
+palette = 2=4b6f3d
 # 3  Yellow / 警告琥珀
-palette = 3=d4a017
-# 4  Blue（Claude 无蓝调；用青绿 accent-teal 兜底，避免出现冷色调破坏氛围）
-palette = 4=5db8a6
-# 5  Magenta / 珊瑚主色
-palette = 5=cc785c
+palette = 3=8a5e16
+# 4  Blue
+palette = 4=375b87
+# 5  Magenta
+palette = 5=6f3f82
 # 6  Cyan / 青绿 accent-teal
-palette = 6=7fbfa8
+palette = 6=2c6f75
 # 7  White / 弱正文米色
-palette = 7=6c6a64
+palette = 7=d8d2c3
 
 # 8  Bright Black / 暖灰
-palette = 8=8e8b82
+palette = 8=8d8575
 # 9  Bright Red / 提亮红
-palette = 9=e06565
+palette = 9=aa4a40
 # 10 Bright Green
-palette = 10=7fd490
+palette = 10=6f914f
 # 11 Bright Yellow / 琥珀 accent-amber
-palette = 11=e8a55a
+palette = 11=b7791f
 # 12 Bright Blue
-palette = 12=7fd4c2
-# 13 Bright Magenta / 提亮珊瑚
-palette = 13=e08b6f
+palette = 12=5479a8
+# 13 Bright Magenta
+palette = 13=8d5aa0
 # 14 Bright Cyan
-palette = 14=9fd4c2
+palette = 14=4d8f95
 # 15 Bright White / 深墨强调
-palette = 15=141413
+palette = 15=ffffff

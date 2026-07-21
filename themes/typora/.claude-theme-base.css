@@ -25,6 +25,8 @@
     --page-width: min(1000px, 92%);
     --page-padding: 48px 24px 96px;
     --typora-monospace: var(--font-mono);
+    --shadow-soft: 0 10px 34px -24px rgba(0, 0, 0, 0.38);
+    --shadow-floating: 0 18px 60px -30px rgba(0, 0, 0, 0.26);
 }
 
 /* ============================================================
@@ -181,11 +183,11 @@ body {
 .md-fences {
     margin: 1.2em 0;
     padding: 40px 20px 20px;
-    border-radius: var(--rd-md);
+    border-radius: var(--rd-lg);
     overflow: hidden;
     border: 0.5px solid var(--code-border);
     background-color: var(--code-block-bg-color);
-    box-shadow: none;
+    box-shadow: var(--shadow-soft);
 }
 
 .md-fences[lang]::before {
@@ -255,6 +257,7 @@ blockquote {
     margin: 1em 0;
     padding: 12px 20px;
     border-radius: 0 var(--rd-md) var(--rd-md) 0;
+    box-shadow: var(--shadow-soft);
     color: var(--body);
     font-size: 0.95em;
 }
@@ -328,6 +331,8 @@ blockquote blockquote {
     border-collapse: collapse;
     margin: 0;
     font-size: 0.95em;
+    border-radius: var(--rd-lg);
+    box-shadow: var(--shadow-soft);
 }
 
 #write table tr {
@@ -495,10 +500,10 @@ footer#footer {
 
 /* Context Menu */
 .context-menu {
-    background-color: var(--canvas);
+    background-color: var(--surface-card);
     border: 1px solid var(--hairline);
     border-radius: var(--rd-md);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-floating);
     padding: 4px 0;
 }
 
@@ -514,10 +519,10 @@ footer#footer {
 
 /* Modal */
 .modal-content {
-    background-color: var(--canvas);
+    background-color: var(--surface-card);
     border: 1px solid var(--hairline);
     border-radius: var(--rd-lg);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-floating);
 }
 
 /* Button */
@@ -564,7 +569,7 @@ input[type="text"]:focus,
 input[type="search"]:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(204, 120, 92, 0.15);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 18%, transparent);
 }
 
 /* Dropdown */
@@ -640,11 +645,12 @@ pre.md-meta-block {
 
 /* Alert (GitHub Flavored Markdown) */
 .md-alert {
-    border-left: 3px solid var(--primary);
+    border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
     padding: 12px 20px;
     margin: 1em 0;
-    border-radius: 0 var(--rd-md) var(--rd-md) 0;
+    border-radius: var(--rd-xl);
     background-color: var(--surface-soft);
+    box-shadow: var(--shadow-soft);
 }
 
 .md-alert-text-container {
@@ -657,8 +663,8 @@ pre.md-meta-block {
 }
 
 .md-alert.md-alert-note {
-    background-color: rgba(93, 184, 166, 0.06);
-    border-left-color: var(--accent-teal);
+    background-color: color-mix(in srgb, var(--accent-teal) 8%, transparent);
+    border-color: color-mix(in srgb, var(--accent-teal) 22%, transparent);
 }
 
 .md-alert-text-tip {
@@ -666,8 +672,8 @@ pre.md-meta-block {
 }
 
 .md-alert.md-alert-tip {
-    background-color: rgba(93, 184, 114, 0.06);
-    border-left-color: var(--success);
+    background-color: color-mix(in srgb, var(--success) 8%, transparent);
+    border-color: color-mix(in srgb, var(--success) 22%, transparent);
 }
 
 .md-alert-text-important {
@@ -675,8 +681,8 @@ pre.md-meta-block {
 }
 
 .md-alert.md-alert-important {
-    background-color: rgba(204, 120, 92, 0.06);
-    border-left-color: var(--primary);
+    background-color: color-mix(in srgb, var(--primary) 8%, transparent);
+    border-color: color-mix(in srgb, var(--primary) 22%, transparent);
 }
 
 .md-alert-text-warning {
@@ -684,8 +690,8 @@ pre.md-meta-block {
 }
 
 .md-alert.md-alert-warning {
-    background-color: rgba(212, 160, 23, 0.06);
-    border-left-color: var(--warning);
+    background-color: color-mix(in srgb, var(--warning) 8%, transparent);
+    border-color: color-mix(in srgb, var(--warning) 22%, transparent);
 }
 
 .md-alert-text-caution {
@@ -693,8 +699,8 @@ pre.md-meta-block {
 }
 
 .md-alert.md-alert-caution {
-    background-color: rgba(198, 69, 69, 0.06);
-    border-left-color: var(--error);
+    background-color: color-mix(in srgb, var(--error) 8%, transparent);
+    border-color: color-mix(in srgb, var(--error) 22%, transparent);
 }
 
 
@@ -711,4 +717,3 @@ pre.md-meta-block {
     }
     @page { margin: 0; }
 }
-
