@@ -132,7 +132,7 @@ MIT &mdash; 详见 [LICENSE](./LICENSE)。
 ## 致谢
 
 - 视觉系统灵感来自 [Anthropic Claude](https://claude.com)
-- 参考主题：[YiNNx/typora-theme-lapis](https://github.com/YiNNx/typora-theme-lapis) &middot; [kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal)
+- 参考主题：[amm10090/claude-warm-obsidian-theme](https://github.com/amm10090/claude-warm-obsidian-theme) &middot; [YiNNx/typora-theme-lapis](https://github.com/YiNNx/typora-theme-lapis) &middot; [kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal)
 - 字体：[JetBrains Mono](https://www.jetbrains.com/mono/)（OFL 1.1）
 
 ---

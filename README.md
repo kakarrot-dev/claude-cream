@@ -155,7 +155,7 @@ MIT &mdash; see [LICENSE](./LICENSE).
 ## Credits
 
 - Visual system inspired by [Anthropic Claude](https://claude.com)
-- Reference themes: [YiNNx/typora-theme-lapis](https://github.com/YiNNx/typora-theme-lapis) &middot; [kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal)
+- Reference themes: [amm10090/claude-warm-obsidian-theme](https://github.com/amm10090/claude-warm-obsidian-theme) &middot; [YiNNx/typora-theme-lapis](https://github.com/YiNNx/typora-theme-lapis) &middot; [kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal)
 - Font: [JetBrains Mono](https://www.jetbrains.com/mono/) (OFL 1.1)
 
 ---
