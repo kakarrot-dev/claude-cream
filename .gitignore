@@ -40,7 +40,6 @@ dist/
 !/themes/
 !/tokens/
 !/img/
-!/clients/
 !/LICENSE
 !/markdown-showcase.md
 !/README.md

@@ -14,10 +14,6 @@
 2. 子目录另有 `AGENTS.md` 时，优先遵守距离当前文件更近的规则。
 3. 不存在的命令、目录、文档不要写成已可用。
 
-> 重要：`clients/codex/AGENTS.md` 与 `clients/claude-code/CLAUDE.md` 是给其他工具复制使用的模板资产，不是本仓规范。本仓开发约束以根目录本文件为准。
-
----
-
 ## 1. 项目概况
 
 ### 项目名称
@@ -29,19 +25,19 @@ Claude Cream
 ### 项目定位
 
 ```text
-暖色调设计 token 与主题资产库，为 Typora、Obsidian、Ghostty 与 AI CLI 提供统一视觉语言。
+暖色调设计 token 与主题资产库，为 Typora、Obsidian、Ghostty、Website 与插画生成提供统一视觉语言。
 ```
 
 ### 主要用户
 
 ```text
-个人维护者；需要在多编辑器 / 终端 / AI CLI 间保持同一套奶油 + 珊瑚视觉体系。
+个人维护者；需要在编辑器、终端、网站与生成式插画间保持同一套奶油 + 珊瑚视觉体系。
 ```
 
 ### 核心目标
 
 ```text
-以 tokens/tokens.json 为单一真源，维护可离线安装的主题与客户端配置资产，并保持各平台观感一致。
+以 tokens/tokens.json 为编辑器与终端主题的单一真源，同时独立管理 Website 色板与插画生成规范。
 ```
 
 ### 非目标
@@ -50,7 +46,6 @@ Claude Cream
 
 - 不做 Web 应用、包管理发布流水线或在线主题商店
 - 不引入 npm / 构建器作为默认安装路径（安装靠 `cp`）
-- 不把 `clients/*` 模板资产误当成仓库自身 Agent 规范
 - 不引入付费字体或必须联网才能生效的依赖
 
 不要主动实现非目标中的内容。
@@ -194,10 +189,8 @@ themes/
   typora/                 Typora Light/Dark 主题 CSS
   obsidian/               Obsidian 主题 + Style Settings
   ghostty/                Ghostty 主题与主配置
-clients/
-  claude-code/CLAUDE.md   供其他项目复制的 Claude Code 模板资产
-  codex/AGENTS.md         供其他项目复制的 Codex 模板资产
-  cursor/settings.json    供合并进 Cursor 用户设置的模板
+  website/                Website Light/Dark 色彩主题
+  illustration/           Website 插画生成风格与提示词
 img/                      Logo、横幅、效果图
 tasks/
   specs/                  功能规格
@@ -230,10 +223,7 @@ CLAUDE.md                 本仓 Claude Code 入口
 
 不存在的文件不需要创建，除非任务确实需要。当前无根级 `DESIGN.md`、`ARCHITECTURE.md`、`CONTRIBUTING.md`、`tasks/lessons.md`。
 
-当本文档与更具体目录中的 `AGENTS.md` 冲突时：
-
-- 开发本仓时，根目录本文件优先。
-- `clients/codex/AGENTS.md` 仅作为对外模板资产，不覆盖本仓规则。
+当本文档与更具体目录中的 `AGENTS.md` 冲突时，开发本仓以根目录本文件优先。
 
 ---
 
@@ -827,7 +817,7 @@ Git：
 - 中大型任务先按 AGENTS.md 编写 Spec 和 Plan，确认后再实现。
 ```
 
-注意：根目录 `CLAUDE.md` 服务本仓开发；`clients/claude-code/CLAUDE.md` 是对外模板，二者职责不同，不要互相覆盖。
+根目录 `CLAUDE.md` 仅服务本仓开发。
 
 ---
 
@@ -840,7 +830,7 @@ Git：
 1. 暖色优先，不做冷灰白
 2. 克制衬线：正文用 PingFang SC，避免跨平台衬线崩坏
 3. 本地优先：离线可用，不依赖付费字体或云服务
-4. 单一真源：`tokens/tokens.json` 驱动所有平台
+4. 真源边界：`tokens/tokens.json` 驱动 Typora、Obsidian 与 Ghostty，Website 与 Illustration 独立记录来源
 5. 精简自定义：只暴露页宽、字号、主色等关键项
 
 改色 / 字体 / 间距 / 圆角 / 语法高亮：
@@ -856,18 +846,9 @@ Git：
 | Typora | `cp` 主题 CSS 到各系统 Typora themes 目录 |
 | Obsidian | `cp -R themes/obsidian` 到目标 vault 的 `.obsidian/themes/Claude Cream` |
 | Ghostty | `cp` config 与 light/dark 主题到 `~/.config/ghostty/` |
-| Claude Code | 复制 `clients/claude-code/CLAUDE.md` 到目标项目根或 `~/.claude/CLAUDE.md` |
-| Codex | 复制 `clients/codex/AGENTS.md` 到目标项目根 |
-| Cursor | 将 `clients/cursor/settings.json` 合并进用户设置 |
 
 ### 21.3 Typora 文件名必须连字符
 
 - Typora 主题文件名必须使用连字符（hyphen），例如 `claude-theme.css`。
 - 禁止下划线文件名，否则 Typora 无法加载。
 - 新增或重命名 Typora 主题文件时先检查此约束。
-
-### 21.4 模板资产边界
-
-- `clients/codex/AGENTS.md`、`clients/claude-code/CLAUDE.md` 是给其他仓库/工具使用的模板。
-- 不要把它们当作本仓 Agent 规范来源。
-- 修改模板资产时说明影响的是「导出内容」，不是本仓开发流程。

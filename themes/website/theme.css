@@ -1,0 +1,48 @@
+/*
+ * Claude Cream — Website Theme
+ * Source: /Users/kakarrot/Dev/website/src/styles/global.css
+ * Scope: color tokens only
+ * Author: KAKARROT
+ * License: MIT
+ */
+
+html[data-theme="light"],
+:root {
+    --color-canvas: #f5f3e9;
+    --color-ink: #29271d;
+    --color-body: #403d36;
+    --color-muted: #6d675b;
+    --color-primary: #b7791f;
+    --color-hairline: #d8d2c3;
+    --color-surface: #ffffff;
+    --color-teal: #2c6f75;
+    --color-syntax-bg: #f0eee4;
+    --color-syntax-fg: #29271d;
+    --color-overlay: #1c1b16;
+
+    /* Compatibility aliases used by the current blog. */
+    --color-bg-warm: var(--color-canvas);
+    --color-bg-card: var(--color-surface);
+    --color-text-primary: var(--color-ink);
+    --color-text-secondary: var(--color-body);
+    --color-text-muted: var(--color-muted);
+    --color-accent: var(--color-primary);
+    --color-accent-dim: color-mix(in oklab, var(--color-primary) 80%, #000);
+    --color-border: var(--color-hairline);
+    --color-border-strong: color-mix(in oklab, var(--color-ink) 28%, var(--color-hairline));
+}
+
+html[data-theme="dark"] {
+    --color-canvas: #2d2e2d;
+    --color-ink: #e9e6dc;
+    --color-body: #ddd9cd;
+    --color-muted: #bbb6a8;
+    --color-primary: #e6bf7a;
+    --color-hairline: #3d3d3a;
+    --color-surface: #303030;
+    --color-teal: #75b5bc;
+    --color-syntax-bg: #252625;
+    --color-syntax-fg: #e9e6dc;
+    --color-overlay: #141310;
+    --color-accent-dim: color-mix(in oklab, var(--color-primary) 85%, #fff);
+}

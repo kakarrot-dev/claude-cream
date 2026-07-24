@@ -1,0 +1,61 @@
+{
+  "name": "Claude Cream Editorial Workshop",
+  "version": "1.0.0",
+  "source": "/Users/kakarrot/Dev/website/public/images/vibe-coding",
+  "visualThesis": "暖色编辑工坊中的微缩叙事装置，将数字产品和工作流转译为可触摸的机械物件、纸张档案与桌面模型。",
+  "palette": {
+    "canvas": "#f5f3e9",
+    "paper": "#f0eee4",
+    "charcoal": "#29271d",
+    "body": "#403d36",
+    "amber": "#b7791f",
+    "teal": "#2c6f75",
+    "overlay": "#1c1b16"
+  },
+  "composition": {
+    "orientation": "landscape",
+    "defaultAspectRatio": "16:9",
+    "camera": "slight overhead or eye-level three-quarter view",
+    "subjectPlacement": "center-right",
+    "negativeSpace": "reserve approximately 38 percent on the left",
+    "textSafeArea": "left side and lower band",
+    "bottomTreatment": "subtle dark gradient across the lower 20 percent"
+  },
+  "materials": [
+    "warm ivory paper",
+    "torn archival cards",
+    "matte charcoal metal",
+    "aged brass",
+    "natural linen",
+    "subtle plaster surface"
+  ],
+  "lighting": {
+    "type": "soft natural side light",
+    "temperature": "warm",
+    "contrast": "medium-low",
+    "shadows": "long, soft-edged, physically plausible"
+  },
+  "rendering": {
+    "style": "editorial miniature product photography",
+    "detail": "tactile and precise without hyper-sharpening",
+    "depthOfField": "gentle",
+    "finish": "slightly analog, restrained film grain"
+  },
+  "motifs": [
+    "mechanical workflow device",
+    "paper archive",
+    "connected nodes and paths",
+    "modular drawers or cards",
+    "single-purpose physical interface"
+  ],
+  "avoid": [
+    "cold blue or purple neon",
+    "glossy glassmorphism",
+    "generic humanoid robot",
+    "floating holographic dashboard",
+    "flat corporate vector illustration",
+    "high saturation",
+    "busy full-frame composition",
+    "generated text, logos, watermarks, or illegible UI labels"
+  ]
+}

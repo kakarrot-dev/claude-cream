@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="img/brand/logo.svg" width="112" alt="Claude Cream Logo">
+  <img src="img/brand/logo.png" width="112" alt="Claude Cream Logo">
 </p>
 
 <h1 align="center">Claude Cream</h1>
 
 <p align="center">
-  <img src="img/brand/banner.svg" width="100%" alt="Claude Cream 项目横幅">
+  <img src="img/brand/banner.png" width="100%" alt="Claude Cream 项目横幅">
 </p>
 
 [![Palette](https://img.shields.io/badge/palette-warm_ivory_+_amber-b7791f)](https://github.com/kakarrot-dev/claude-cream)
@@ -13,7 +13,7 @@
 [![Font](https://img.shields.io/badge/font-PingFang_SC_+_JetBrains_Mono-3d3d3a)](https://github.com/kakarrot-dev/claude-cream)
 [![License](https://img.shields.io/badge/license-MIT-5db872)](./LICENSE)
 
-暖色调编辑工作台 —— 覆盖 Typora / Obsidian / Ghostty 与 AI CLI 的统一设计系统。
+暖色调主题资产库，覆盖 Typora、Obsidian、Ghostty、Website 与可复用插画生成规范。
 
 设计灵感来自 [Claude.com](https://claude.com) 的视觉语言：有层次的暖色表面、克制的琥珀金，以及让代码看起来像印刷物而非工业面板的排版质感。
 
@@ -25,36 +25,35 @@
 - **琥珀金强调** `#b7791f` &mdash; 克制、温暖，同时清晰表达交互状态
 - **暖炭灰深色画布** `#2d2e2d` &mdash; 保持深度而不使用生硬纯黑
 - **中文优先排版** &mdash; 正文用 PingFang SC 系统字体，代码用 JetBrains Mono
-- **一套设计语言，四个平台** &mdash; Typora / Obsidian / Ghostty 主题 + AI CLI 配置全部对齐
+- **一套视觉语言，五类主题资产** &mdash; Typora、Obsidian、Ghostty、Website 与 Illustration
 
 ## 目录结构
 
 ```
 claude-cream/
 ├── themes/
-│   ├── typora/              # 主题（Light + Dark 双模式）
-│   ├── obsidian/            # 主题（单文件双模式 + Style Settings）
-│   └── ghostty/             # 终端主题（Light + Dark）+ 主配置
-├── clients/
-│   ├── claude-code/         # Claude Code 项目级 CLAUDE.md
-│   ├── codex/               # Codex CLI 项目级 AGENTS.md
-│   └── cursor/              # Cursor 编辑器 settings.json
+│   ├── typora/              # Markdown 写作 Light + Dark 主题
+│   ├── obsidian/            # 知识库双模式主题
+│   ├── ghostty/             # 终端调色板与 Ghostty 配置
+│   ├── website/             # Website 色彩主题（Light + Dark）
+│   └── illustration/        # 图像生成风格与提示词模板
+├── img/brand/               # 项目 Logo 与横幅
 ├── tokens/                  # 跨平台共享设计 token（单一真源）
 └── tasks/                   # 项目跟踪
 ```
 
 ### 设计 Token
 
-`tokens/tokens.json` 是跨平台颜色的唯一真源。
+`tokens/tokens.json` 是 Typora、Obsidian 与 Ghostty 三类主题的唯一真源。
 
 | 分组 | 说明 |
 |---|---|
-| `colors.light` / `colors.dark` | 25 个语义色变量，Light + Dark 双套 |
+| `colors.light` / `colors.dark` | 每种模式 26 个语义色变量 |
 | `typography` | 字体栈 + 字号 + 行高 |
 | `spacing` / `rounded` | 间距 8 档 + 圆角 6 档 |
 | `syntax.light` / `syntax.dark` | 代码高亮语义色（关键字 / 字符串 / 注释等）|
 
-修改一处 token，三平台主题同步更新（Typora / Obsidian 手动映射，Ghostty 直读 palette）。
+`tokens/tokens.json` 通过手工映射驱动 Typora、Obsidian 与 Ghostty。`themes/website` 独立保存博客色板快照，`themes/illustration` 将 Website 视觉语言转化为可复用的图像生成规则。
 
 ## 安装
 
@@ -92,20 +91,28 @@ cp themes/ghostty/claude-cream-light themes/ghostty/claude-cream-dark \
 
 重启 Ghostty，自动跟随系统外观切换。
 
-### AI CLI
+### Website
 
-| CLI | 配置 |
-|---|---|
-| Claude Code | `clients/claude-code/CLAUDE.md` &rarr; 项目根目录或 `~/.claude/CLAUDE.md` |
-| Codex CLI | `clients/codex/AGENTS.md` &rarr; 项目根目录 |
-| Cursor | `clients/cursor/settings.json` &rarr; 合并进 Cursor 用户设置 |
+在网站样式入口引入独立色彩主题：
+
+```css
+@import "./themes/website/theme.css";
+```
+
+使用 `html[data-theme="light"]` 与 `html[data-theme="dark"]` 切换模式。适用范围和来源见 [`themes/website/README.md`](themes/website/README.md)。
+
+### Illustration
+
+组合使用 [`themes/illustration/prompt-template.md`](themes/illustration/prompt-template.md) 与 [`themes/illustration/style.json`](themes/illustration/style.json)，生成与 Website 一致的封面和编辑插画。
+
+每个主题目录均提供独立 README，说明安装、映射关系与验证方式。
 
 ## 设计原则
 
 1. **暖色优先** &mdash; 刻意选择暖色调，不做冷灰白
 2. **克制衬线** &mdash; PingFang SC 足以撑起编辑气质，避免 Windows/Linux 崩坏
 3. **本地优先** &mdash; 所有配置离线可用，不依赖付费字体或云服务
-4. **单一真源** &mdash; `tokens/tokens.json` 驱动所有平台
+4. **真源边界清晰** &mdash; 编辑器与终端共享 Token 位于 `tokens/`，Website 与 Illustration 各自记录来源
 5. **精简自定义** &mdash; 只暴露真正常用的选项：页宽、字号、主色
 
 ## 环境要求
@@ -115,6 +122,7 @@ cp themes/ghostty/claude-cream-light themes/ghostty/claude-cream-dark \
 | Typora | 1.5+ | Windows / macOS / Linux |
 | Obsidian | 1.4.0+ | 全平台 |
 | Ghostty | 1.0+ | macOS / Linux |
+| Website 主题 | 现代浏览器 | 需要支持 `color-mix()` |
 | macOS | 12+ | PingFang SC 系统字体 |
 
 **字体**：
@@ -134,6 +142,7 @@ MIT &mdash; 详见 [LICENSE](./LICENSE)。
 - 视觉系统灵感来自 [Anthropic Claude](https://claude.com)
 - 参考主题：[amm10090/claude-warm-obsidian-theme](https://github.com/amm10090/claude-warm-obsidian-theme) &middot; [YiNNx/typora-theme-lapis](https://github.com/YiNNx/typora-theme-lapis) &middot; [kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal)
 - 字体：[JetBrains Mono](https://www.jetbrains.com/mono/)（OFL 1.1）
+- 品牌视觉：依据本仓 Claude Cream 色板与插画规范生成
 
 ---
 
