@@ -37,7 +37,7 @@ Claude Cream
 ### 核心目标
 
 ```text
-以 tokens/tokens.json 为 Codex、Cursor / VS Code、Zed、编辑器与终端主题的单一真源，同时独立管理 Website 色板与插画生成规范。
+以 tokens/tokens.json 为 Codex、Cursor / VS Code、Zed、编辑器与终端主题的单一真源，同时独立管理 Website 色板与图像生成规范。
 ```
 
 ### 非目标
@@ -208,7 +208,7 @@ themes/
   obsidian/               Obsidian 主题 + Style Settings
   ghostty/                Ghostty 主题与主配置
   website/                Website Light/Dark 色彩主题
-  illustration/           Website 插画生成风格与提示词
+  image-generation/      插画、个人社交头像与壁纸生成风格及提示词
 img/                      Logo、横幅、效果图
 tasks/
   specs/                  功能规格
@@ -854,7 +854,7 @@ Git：
 1. 暖色优先，不做冷灰白
 2. 克制衬线：正文用 PingFang SC，避免跨平台衬线崩坏
 3. 本地优先：离线可用，不依赖付费字体或云服务
-4. 真源边界：`tokens/tokens.json` 驱动 Codex、Cursor / VS Code、Zed、Typora、Obsidian 与 Ghostty，Website 与 Illustration 独立记录来源
+4. 真源边界：`tokens/tokens.json` 驱动 Codex、Cursor / VS Code、Zed、Typora、Obsidian 与 Ghostty，Website 与 Image Generation 独立记录来源
 5. 精简自定义：只暴露页宽、字号、主色等关键项
 
 改色 / 字体 / 间距 / 圆角 / 语法高亮：

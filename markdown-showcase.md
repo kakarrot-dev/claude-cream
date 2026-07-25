@@ -1,6 +1,6 @@
 # Claude Cream 主题展示
 
-一份全面的 Markdown 元素预览，用于 Obsidian 和 Typora 截图。
+一份覆盖常用 Markdown 元素的视觉 Fixture，用于 Typora、Obsidian、Cursor / VS Code 和 Zed 的主题截图与回归检查。
 
 ---
 
@@ -22,7 +22,7 @@
 
 ## 正文与强调
 
-这是一段普通的正文文字。Claude Cream 主题以暖色米黄画布和珊瑚橙强调色为设计语言，营造舒适的阅读与写作体验。正文行高为 1.65，字号 16px，阅读流畅。
+这是一段普通的正文文字。Claude Cream 使用暖象牙画布、琥珀金强调色和暖炭灰深色背景，在编辑器、Markdown 阅读器和终端之间保持一致的视觉语言。正文建议行高为 1.65，字号为 16px。
 
 这是**加粗文字**，这是*斜体文字*，这是***加粗斜体***，这是~~删除线文字~~，这是 `行内代码`，这是[超链接文字](https://claude.ai)。
 
@@ -32,7 +32,7 @@
 
 > 设计是一种将复杂问题转化为优雅解决方案的能力。
 >
-> —— 简洁、自然、不冗余。
+> 简洁、自然、不冗余。
 
 > 嵌套引用同样支持：
 >
@@ -46,12 +46,12 @@
 
 ### 无序列表
 
-- 暖色米黄画布 `#faf9f5`，营造纸张般的温润感
-- 珊瑚橙强调色 `#cc785c`，作为视觉锚点
+- 暖象牙画布 `#f5f3e9`，保留纸张般的温润感
+- 琥珀金强调色 `#b7791f`，作为视觉锚点
   - 次级列表项，缩进层级清晰
   - 鼠标悬停时有轻微的背景反馈
     - 三级列表项依然有良好的视觉层级
-- 深墨色文字 `#141413`，确保高对比度可读性
+- 暖墨色文字 `#29271d`，保持清楚的正文对比度
 
 ### 有序列表
 
@@ -67,8 +67,9 @@
 
 - [x] 浅色模式完成
 - [x] 深色模式完成
-- [ ] VSCode 主题适配（规划中）
-- [ ] GitHub 发布（延后）
+- [x] Cursor / VS Code 五模式主题完成
+- [x] Zed Light / Dark 主题完成
+- [x] Image Generation 提示词完成
 
 ---
 
@@ -76,7 +77,7 @@
 
 ### 行内代码
 
-使用命令 `pnpm install` 安装依赖，然后通过 `pnpm dev` 启动开发服务器。
+本项目不使用包管理器或开发服务器。修改主题后运行 `git diff --check`，Cursor / VS Code 主题使用 `themes/vscode/scripts/validate-theme.sh` 做静态验证。
 
 ### 代码块
 
@@ -99,11 +100,14 @@ print(result)  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
 | 平台 | 文件名 | 模式 | 状态 |
 |------|--------|------|------|
-| Obsidian | `theme.css` | Light / Dark | ✅ 已完成 |
-| Typora | `claude-theme.css` | Light | ✅ 已完成 |
-| Typora | `claude-theme-dark.css` | Dark | ✅ 已完成 |
-| Ghostty | `claude-cream-dark` | Dark | ✅ 已完成 |
-| VSCode | — | Both | ⏳ 规划中 |
+| Obsidian | `theme.css` | Light / Dark | 已完成 |
+| Typora | `claude-theme.css` | Light | 已完成 |
+| Typora | `claude-theme-dark.css` | Dark | 已完成 |
+| Ghostty | `claude-cream-light` / `claude-cream-dark` | Light / Dark | 已完成 |
+| Codex | `claude-cream-light.theme` / `claude-cream-dark.theme` | Light / Dark | 已完成 |
+| Cursor / VS Code | `themes/*.json` | 五种模式 | 已完成 |
+| Zed | `claude-cream.json` | Light / Dark | 已完成 |
+| Image Generation | `*-prompt-template.md` | 插画 / 头像 / 壁纸 | 已完成 |
 
 ---
 
@@ -161,7 +165,7 @@ print("Hello from inside a details block!")
 
 ## 水平并排
 
-> **注意：** 以上展示了所有常用的 Markdown 元素类型。
+> **注意：** 以上内容用于检查常用 Markdown 元素，不代表客户端支持范围完全一致。
 >
 > 深色模式同样支持全部元素，配色会自动切换为 dark 色板。
 >

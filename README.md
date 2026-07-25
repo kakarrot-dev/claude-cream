@@ -31,7 +31,7 @@ Inspired by the [Claude.com](https://claude.com) visual language: layered warm s
 - **Amber accent** `#b7791f` — restrained, warm, and clear in interactive states
 - **Warm charcoal dark canvas** `#2d2e2d` — depth without a hard black backdrop
 - **Chinese-first typography** — PingFang SC system font for prose, JetBrains Mono for code
-- **One visual language, eight theme assets** — Codex, Cursor / VS Code, Zed, Typora, Obsidian, Ghostty, Website, and Illustration
+- **One visual language, eight theme assets** — Codex, Cursor / VS Code, Zed, Typora, Obsidian, Ghostty, Website, and Image Generation
 
 ## What's Inside
 
@@ -45,7 +45,7 @@ claude-cream/
 │   ├── vscode/              # Five Cursor / VS Code themes
 │   ├── zed/                 # Zed Light + Dark local theme
 │   ├── website/             # Website Light + Dark color theme
-│   └── illustration/        # Image-generation style + prompt template
+│   └── image-generation/    # Illustration, avatar, and wallpaper prompts
 ├── img/brand/               # Project logo and banner
 ├── tokens/                  # Shared design tokens, single source of truth
 └── tasks/                   # Project tracking
@@ -63,7 +63,7 @@ claude-cream/
 | `spacing` / `rounded` | 8 spacing steps + 6 border-radius steps |
 | `syntax.*` | Five-mode syntax highlighting tokens |
 
-`tokens/tokens.json` drives Codex, Cursor / VS Code, Zed, Typora, Obsidian, and Ghostty through manual mapping. `themes/website` is a separately managed snapshot of the blog palette, while `themes/illustration` turns that website language into reusable image-generation rules.
+`tokens/tokens.json` drives Codex, Cursor / VS Code, Zed, Typora, Obsidian, and Ghostty through manual mapping. `themes/website` is a separately managed snapshot of the blog palette, while `themes/image-generation` turns that website language into reusable image-generation rules.
 
 ## Install
 
@@ -134,9 +134,9 @@ Import the standalone color theme into a website stylesheet:
 
 Switch modes with `html[data-theme="light"]` and `html[data-theme="dark"]`. See [`themes/website/README.md`](themes/website/README.md) for scope and source.
 
-### Illustration
+### Image Generation
 
-Use [`themes/illustration/prompt-template.md`](themes/illustration/prompt-template.md) with [`themes/illustration/style.json`](themes/illustration/style.json) to create covers and editorial images that match the website.
+Use [`themes/image-generation/illustration-prompt-template.md`](themes/image-generation/illustration-prompt-template.md) with [`themes/image-generation/style.json`](themes/image-generation/style.json) to create covers and editorial images that match the website. The same directory also includes prompts for [personal social avatars](themes/image-generation/avatar-prompt-template.md) and [desktop or mobile wallpapers](themes/image-generation/wallpaper-prompt-template.md).
 
 Each theme folder contains its own README with installation, mapping, and validation notes.
 
@@ -145,7 +145,7 @@ Each theme folder contains its own README with installation, mapping, and valida
 1. **Warm over cool** &mdash; deliberate warmth; no sterile gray or cold white
 2. **Serif restraint** &mdash; PingFang SC carries enough character; avoids serif font fallback issues on Windows/Linux
 3. **Local-first** &mdash; all assets work offline; no paid fonts, no cloud dependencies
-4. **Clear sources of truth** &mdash; shared editor and terminal tokens stay in `tokens/`; Website and Illustration keep their own documented sources
+4. **Clear sources of truth** &mdash; shared editor and terminal tokens stay in `tokens/`; Website and Image Generation keep their own documented sources
 5. **Minimal customization** &mdash; expose only what matters: page width, font size, accent color
 
 ## Requirements
@@ -176,7 +176,7 @@ MIT &mdash; see [LICENSE](./LICENSE).
 ## Credits
 
 - Visual system inspired by [Anthropic Claude](https://claude.com)
-- Reference themes: [amm10090/claude-warm-obsidian-theme](https://github.com/amm10090/claude-warm-obsidian-theme) &middot; [YiNNx/typora-theme-lapis](https://github.com/YiNNx/typora-theme-lapis) &middot; [kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal)
+- Reference themes: [amm10090/claude-warm-obsidian-theme](https://github.com/amm10090/claude-warm-obsidian-theme) &middot; [YiNNx/typora-theme-lapis](https://github.com/YiNNx/typora-theme-lapis) &middot; [kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal) &middot; [primer/github-vscode-theme](https://github.com/primer/github-vscode-theme)
 - Font: [JetBrains Mono](https://www.jetbrains.com/mono/) (OFL 1.1)
 - Brand imagery: generated from the Claude Cream palette and illustration specification in this repository
 

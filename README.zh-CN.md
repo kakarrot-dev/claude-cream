@@ -15,7 +15,7 @@
 [![Codex](https://img.shields.io/badge/Codex-light_+_dark-e6bf7a)](themes/codex/README.md)
 [![License](https://img.shields.io/badge/license-MIT-b7791f)](./LICENSE)
 
-暖色调主题资产库，覆盖 Codex、Cursor / VS Code、Zed、Typora、Obsidian、Ghostty、Website 与可复用插画生成规范。
+暖色调主题资产库，覆盖 Codex、Cursor / VS Code、Zed、Typora、Obsidian、Ghostty、Website 与可复用图像生成规范。
 
 设计灵感来自 [Claude.com](https://claude.com) 的视觉语言：有层次的暖色表面、克制的琥珀金，以及让代码看起来像印刷物而非工业面板的排版质感。
 
@@ -27,7 +27,7 @@
 - **琥珀金强调** `#b7791f` &mdash; 克制、温暖，同时清晰表达交互状态
 - **暖炭灰深色画布** `#2d2e2d` &mdash; 保持深度而不使用生硬纯黑
 - **中文优先排版** &mdash; 正文用 PingFang SC 系统字体，代码用 JetBrains Mono
-- **一套视觉语言，八类主题资产** &mdash; Codex、Cursor / VS Code、Zed、Typora、Obsidian、Ghostty、Website 与 Illustration
+- **一套视觉语言，八类主题资产** &mdash; Codex、Cursor / VS Code、Zed、Typora、Obsidian、Ghostty、Website 与 Image Generation
 
 ## 目录结构
 
@@ -41,7 +41,7 @@ claude-cream/
 │   ├── vscode/              # Cursor / VS Code 五模式主题
 │   ├── zed/                 # Zed Light + Dark 本地主题
 │   ├── website/             # Website 色彩主题（Light + Dark）
-│   └── illustration/        # 图像生成风格与提示词模板
+│   └── image-generation/    # 插画、头像与壁纸生成提示词
 ├── img/brand/               # 项目 Logo 与横幅
 ├── tokens/                  # 跨平台共享设计 token（单一真源）
 └── tasks/                   # 项目跟踪
@@ -59,7 +59,7 @@ claude-cream/
 | `spacing` / `rounded` | 间距 8 档 + 圆角 6 档 |
 | `syntax.*` | 五模式代码高亮语义色 |
 
-`tokens/tokens.json` 通过手工映射驱动 Codex、Cursor / VS Code、Zed、Typora、Obsidian 与 Ghostty。`themes/website` 独立保存博客色板快照，`themes/illustration` 将 Website 视觉语言转化为可复用的图像生成规则。
+`tokens/tokens.json` 通过手工映射驱动 Codex、Cursor / VS Code、Zed、Typora、Obsidian 与 Ghostty。`themes/website` 独立保存博客色板快照，`themes/image-generation` 将 Website 视觉语言转化为可复用的图像生成规则。
 
 ## 安装
 
@@ -130,9 +130,9 @@ cp themes/ghostty/claude-cream-light themes/ghostty/claude-cream-dark \
 
 使用 `html[data-theme="light"]` 与 `html[data-theme="dark"]` 切换模式。适用范围和来源见 [`themes/website/README.md`](themes/website/README.md)。
 
-### Illustration
+### Image Generation
 
-组合使用 [`themes/illustration/prompt-template.md`](themes/illustration/prompt-template.md) 与 [`themes/illustration/style.json`](themes/illustration/style.json)，生成与 Website 一致的封面和编辑插画。
+组合使用 [`themes/image-generation/illustration-prompt-template.md`](themes/image-generation/illustration-prompt-template.md) 与 [`themes/image-generation/style.json`](themes/image-generation/style.json)，生成与 Website 一致的封面和编辑插画。同一目录还提供[个人社交头像](themes/image-generation/avatar-prompt-template.md)和[桌面或移动端壁纸](themes/image-generation/wallpaper-prompt-template.md)提示词。
 
 每个主题目录均提供独立 README，说明安装、映射关系与验证方式。
 
@@ -141,7 +141,7 @@ cp themes/ghostty/claude-cream-light themes/ghostty/claude-cream-dark \
 1. **暖色优先** &mdash; 刻意选择暖色调，不做冷灰白
 2. **克制衬线** &mdash; PingFang SC 足以撑起编辑气质，避免 Windows/Linux 崩坏
 3. **本地优先** &mdash; 所有配置离线可用，不依赖付费字体或云服务
-4. **真源边界清晰** &mdash; 编辑器与终端共享 Token 位于 `tokens/`，Website 与 Illustration 各自记录来源
+4. **真源边界清晰** &mdash; 编辑器与终端共享 Token 位于 `tokens/`，Website 与 Image Generation 各自记录来源
 5. **精简自定义** &mdash; 只暴露真正常用的选项：页宽、字号、主色
 
 ## 环境要求
@@ -172,7 +172,7 @@ MIT &mdash; 详见 [LICENSE](./LICENSE)。
 ## 致谢
 
 - 视觉系统灵感来自 [Anthropic Claude](https://claude.com)
-- 参考主题：[amm10090/claude-warm-obsidian-theme](https://github.com/amm10090/claude-warm-obsidian-theme) &middot; [YiNNx/typora-theme-lapis](https://github.com/YiNNx/typora-theme-lapis) &middot; [kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal)
+- 参考主题：[amm10090/claude-warm-obsidian-theme](https://github.com/amm10090/claude-warm-obsidian-theme) &middot; [YiNNx/typora-theme-lapis](https://github.com/YiNNx/typora-theme-lapis) &middot; [kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal) &middot; [primer/github-vscode-theme](https://github.com/primer/github-vscode-theme)
 - 字体：[JetBrains Mono](https://www.jetbrains.com/mono/)（OFL 1.1）
 - 品牌视觉：依据本仓 Claude Cream 色板与插画规范生成
 
