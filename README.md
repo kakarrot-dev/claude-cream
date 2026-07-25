@@ -18,7 +18,7 @@
 
 [中文版](README.zh-CN.md)
 
-A warm editorial theme library for Typora, Obsidian, Ghostty, websites, and reusable illustration generation.
+A warm editorial theme library for Cursor / VS Code, Typora, Obsidian, Ghostty, websites, and reusable illustration generation.
 
 Inspired by the [Claude.com](https://claude.com) visual language: layered warm surfaces, restrained amber accents, and a typographic sensibility that makes code feel editorial rather than industrial.
 
@@ -30,7 +30,7 @@ Inspired by the [Claude.com](https://claude.com) visual language: layered warm s
 - **Amber accent** `#b7791f` — restrained, warm, and clear in interactive states
 - **Warm charcoal dark canvas** `#2d2e2d` — depth without a hard black backdrop
 - **Chinese-first typography** — PingFang SC system font for prose, JetBrains Mono for code
-- **One visual language, five theme assets** — Typora, Obsidian, Ghostty, Website, and Illustration
+- **One visual language, six theme assets** — Cursor / VS Code, Typora, Obsidian, Ghostty, Website, and Illustration
 
 ## What's Inside
 
@@ -40,6 +40,7 @@ claude-cream/
 │   ├── typora/              # Light + Dark Markdown writing theme
 │   ├── obsidian/            # Dual-mode knowledge-base theme
 │   ├── ghostty/             # Terminal palettes + Ghostty config
+│   ├── vscode/              # Five Cursor / VS Code themes
 │   ├── website/             # Website Light + Dark color theme
 │   └── illustration/        # Image-generation style + prompt template
 ├── img/brand/               # Project logo and banner
@@ -49,18 +50,29 @@ claude-cream/
 
 ### Design Tokens
 
-`tokens/tokens.json` is the single source of truth for the Typora, Obsidian, and Ghostty themes.
+`tokens/tokens.json` is the single source of truth for Cursor / VS Code, Typora, Obsidian, and Ghostty themes.
 
 | Group | Description |
 |---|---|
 | `colors.light` / `colors.dark` | 26 semantic color variables per mode |
+| `editor.*` | Five-mode editor surfaces, states, focus, selection, and Diff |
 | `typography` | Font stacks, sizes, line heights |
 | `spacing` / `rounded` | 8 spacing steps + 6 border-radius steps |
-| `syntax.light` / `syntax.dark` | Syntax highlighting tokens (keywords, strings, comments, etc.) |
+| `syntax.*` | Five-mode syntax highlighting tokens |
 
-`tokens/tokens.json` drives Typora, Obsidian, and Ghostty through manual mapping. `themes/website` is a separately managed snapshot of the blog palette, while `themes/illustration` turns that website language into reusable image-generation rules.
+`tokens/tokens.json` drives Cursor / VS Code, Typora, Obsidian, and Ghostty through manual mapping. `themes/website` is a separately managed snapshot of the blog palette, while `themes/illustration` turns that website language into reusable image-generation rules.
 
 ## Install
+
+### Cursor / VS Code
+
+```bash
+mkdir -p "$HOME/.cursor/extensions"
+rm -rf "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
+cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
+```
+
+Run `Developer: Reload Window`, then select one of the five Claude Cream themes from `Preferences: Color Theme`. The GitHub download, VS Code, Windows, update, and validation instructions are in [`themes/vscode/README.md`](themes/vscode/README.md). No npm, `.vsix`, or marketplace installation is required.
 
 ### Typora
 
@@ -127,6 +139,7 @@ Each theme folder contains its own README with installation, mapping, and valida
 | Typora | 1.5+ | Windows / macOS / Linux |
 | Obsidian | 1.4.0+ | All platforms |
 | Ghostty | 1.0+ | macOS / Linux |
+| Cursor / VS Code | VS Code API 1.85+ | Shared theme extension |
 | Website theme | Modern browser | Requires `color-mix()` support |
 | macOS | 12+ | PingFang SC system font |
 

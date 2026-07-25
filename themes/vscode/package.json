@@ -1,0 +1,46 @@
+{
+  "name": "claude-cream",
+  "displayName": "Claude Cream",
+  "description": "Warm ivory and charcoal themes for Cursor and Visual Studio Code.",
+  "version": "0.2.0",
+  "publisher": "kakarrot",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kakarrot-dev/claude-cream"
+  },
+  "bugs": {
+    "url": "https://github.com/kakarrot-dev/claude-cream/issues"
+  },
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Claude Cream",
+        "uiTheme": "vs",
+        "path": "./themes/claude-cream-color-theme.json"
+      },
+      {
+        "label": "Claude Cream Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-cream-dark-color-theme.json"
+      },
+      {
+        "label": "Claude Cream Dark Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-cream-dark-dimmed-color-theme.json"
+      },
+      {
+        "label": "Claude Cream High Contrast",
+        "uiTheme": "hc-light",
+        "path": "./themes/claude-cream-high-contrast-color-theme.json"
+      },
+      {
+        "label": "Claude Cream Dark High Contrast",
+        "uiTheme": "hc-black",
+        "path": "./themes/claude-cream-dark-high-contrast-color-theme.json"
+      }
+    ]
+  }
+}

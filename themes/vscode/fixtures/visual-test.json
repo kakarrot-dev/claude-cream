@@ -1,0 +1,18 @@
+{
+  "name": "Claude Cream",
+  "version": "0.2.0",
+  "enabled": true,
+  "deprecated": null,
+  "modes": [
+    "light",
+    "dark",
+    "dark-dimmed",
+    "light-high-contrast",
+    "dark-high-contrast"
+  ],
+  "metadata": {
+    "homepage": "https://github.com/kakarrot-dev/claude-cream",
+    "minimumContrast": 4.5,
+    "offline": true
+  }
+}

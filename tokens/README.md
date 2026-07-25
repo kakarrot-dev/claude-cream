@@ -2,26 +2,28 @@
 
 ## 概述
 
-`tokens.json` 是三平台主题的**单一真源（SSOT）**。所有颜色、字体、间距、圆角等设计变量只在此定义一次，再手工映射到三平台主题产物。
+`tokens.json` 是编辑器与终端主题的**单一真源（SSOT）**。所有颜色、字体、间距、圆角等设计变量只在此定义一次，再手工映射到各平台主题产物。
 
 ## Token 分组
 
 | 分组 | 键 | 用途 | 消费平台 |
 |---|---|---|---|
-| `colors` | `light.*`, `dark.*` | 颜色体系：画布、强调色、文本、表面、语义色 | Typora CSS 变量 / Obsidian CSS 变量 / Ghostty palette |
+| `colors` | `light.*`, `dark.*` | 颜色体系：画布、强调色、文本、表面、语义色 | Typora / Obsidian CSS、Ghostty palette、Cursor / VS Code 工作台 |
+| `editor` | 五种模式的编辑器语义角色 | 工作台画布、文字、边框、焦点、选区和 Diff | Cursor / VS Code |
 | `typography` | `font-*`, `size-*`, `weight-*` | 字体栈（PingFang SC + JetBrains Mono）和字号层级 | 各平台 font-family / font-size 声明 |
 | `spacing` | `xxs` ~ `xxl`, `section` | 间距/内边距，8px 递增体系 | padding / margin 值 |
 | `rounded` | `xs` ~ `xl`, `pill` | 圆角半径体系 | border-radius 值 |
-| `syntax` | `light.*`, `dark.*` | 语法高亮色（关键字/字符串/注释等 11 类） | Obsidian / Typora 代码高亮、Ghostty ANSI 色参考 |
+| `syntax` | 五种模式的语法高亮色 | 关键字、字符串、注释等 11 类 | Obsidian / Typora 代码高亮、Ghostty ANSI、Cursor / VS Code 高亮 |
 | `page` | `width`, `padding` | 编辑区页面宽度和内边距 | Typora `#write` / Obsidian `.markdown-preview-view` |
 | `components` | — | 组件级 token 引用（按钮、卡片、代码窗、引用块等） | 设计参考，不直接注入代码 |
 
 ## 如何新增颜色变量
 
 1. 在 `colors.light` 和 `colors.dark` 中同步添加同名字段（颜色值可不同）
-2. 如果新增的是语法高亮色，同时在 `syntax.light` / `syntax.dark` 添加
-3. 更新本文件"Token 分组"表（可选）
-4. 手工同步 Typora、Obsidian 与 Ghostty 中的对应值，并运行定向比对
+2. 编辑器专用状态在 `editor` 五个模式中保持同名字段
+3. 如果新增语法高亮色，同时在 `syntax` 五个模式中添加
+4. 更新本文件“Token 分组”表
+5. 手工同步对应主题文件，并运行定向比对
 
 ## 如何同步三平台产物
 
@@ -35,6 +37,9 @@ tokens.json → theme.css（Light + Dark 二合一）
 
 # Ghostty —— 将颜色与语法语义映射到背景、前景、光标、选区和 ANSI 16 色
 tokens.json → claude-cream-light / claude-cream-dark
+
+# Cursor / VS Code —— 映射到工作台、TextMate scope 与 Semantic Highlighting
+tokens.json → 默认 Light/Dark + Dark Dimmed + Light/Dark High Contrast
 ```
 
 ## 设计决策
@@ -43,5 +48,6 @@ tokens.json → claude-cream-light / claude-cream-dark
 - `colors.dark.primary === "#e6bf7a"` — Dark 模式提亮为柔和金色以维持对比度
 - `colors.light.canvas === "#f5f3e9"` / `colors.dark.canvas === "#2d2e2d"` — 暖象牙与暖炭灰双画布
 - 字体策略：中文 `PingFang SC` 走系统调用，代码使用 `JetBrains Mono`
-- 当前主题产物采用手工映射；修改 token 后必须同步 Typora、Obsidian 与 Ghostty 文件
+- 当前主题产物采用手工映射；修改 token 后必须同步 Typora、Obsidian、Ghostty 与 Cursor / VS Code 文件
+- Cursor / VS Code 辅助主题使用原生 `include` 继承默认主题，但覆盖值仍来自 `editor` 与 `syntax`
 - 不做衬线标题，统一使用 PingFang SC

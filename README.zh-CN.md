@@ -13,7 +13,7 @@
 [![Font](https://img.shields.io/badge/font-PingFang_SC_+_JetBrains_Mono-3d3d3a)](https://github.com/kakarrot-dev/claude-cream)
 [![License](https://img.shields.io/badge/license-MIT-5db872)](./LICENSE)
 
-暖色调主题资产库，覆盖 Typora、Obsidian、Ghostty、Website 与可复用插画生成规范。
+暖色调主题资产库，覆盖 Cursor / VS Code、Typora、Obsidian、Ghostty、Website 与可复用插画生成规范。
 
 设计灵感来自 [Claude.com](https://claude.com) 的视觉语言：有层次的暖色表面、克制的琥珀金，以及让代码看起来像印刷物而非工业面板的排版质感。
 
@@ -25,7 +25,7 @@
 - **琥珀金强调** `#b7791f` &mdash; 克制、温暖，同时清晰表达交互状态
 - **暖炭灰深色画布** `#2d2e2d` &mdash; 保持深度而不使用生硬纯黑
 - **中文优先排版** &mdash; 正文用 PingFang SC 系统字体，代码用 JetBrains Mono
-- **一套视觉语言，五类主题资产** &mdash; Typora、Obsidian、Ghostty、Website 与 Illustration
+- **一套视觉语言，六类主题资产** &mdash; Cursor / VS Code、Typora、Obsidian、Ghostty、Website 与 Illustration
 
 ## 目录结构
 
@@ -35,6 +35,7 @@ claude-cream/
 │   ├── typora/              # Markdown 写作 Light + Dark 主题
 │   ├── obsidian/            # 知识库双模式主题
 │   ├── ghostty/             # 终端调色板与 Ghostty 配置
+│   ├── vscode/              # Cursor / VS Code 五模式主题
 │   ├── website/             # Website 色彩主题（Light + Dark）
 │   └── illustration/        # 图像生成风格与提示词模板
 ├── img/brand/               # 项目 Logo 与横幅
@@ -44,18 +45,29 @@ claude-cream/
 
 ### 设计 Token
 
-`tokens/tokens.json` 是 Typora、Obsidian 与 Ghostty 三类主题的唯一真源。
+`tokens/tokens.json` 是 Cursor / VS Code、Typora、Obsidian 与 Ghostty 主题的唯一真源。
 
 | 分组 | 说明 |
 |---|---|
 | `colors.light` / `colors.dark` | 每种模式 26 个语义色变量 |
+| `editor.*` | 五模式编辑器表面、状态、焦点、选区与 Diff |
 | `typography` | 字体栈 + 字号 + 行高 |
 | `spacing` / `rounded` | 间距 8 档 + 圆角 6 档 |
-| `syntax.light` / `syntax.dark` | 代码高亮语义色（关键字 / 字符串 / 注释等）|
+| `syntax.*` | 五模式代码高亮语义色 |
 
-`tokens/tokens.json` 通过手工映射驱动 Typora、Obsidian 与 Ghostty。`themes/website` 独立保存博客色板快照，`themes/illustration` 将 Website 视觉语言转化为可复用的图像生成规则。
+`tokens/tokens.json` 通过手工映射驱动 Cursor / VS Code、Typora、Obsidian 与 Ghostty。`themes/website` 独立保存博客色板快照，`themes/illustration` 将 Website 视觉语言转化为可复用的图像生成规则。
 
 ## 安装
+
+### Cursor / VS Code
+
+```bash
+mkdir -p "$HOME/.cursor/extensions"
+rm -rf "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
+cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
+```
+
+执行 `Developer: Reload Window`，然后在 `Preferences: Color Theme` 中选择五种 Claude Cream 主题之一。GitHub 下载、VS Code、Windows、更新和验证说明见 [`themes/vscode/README.md`](themes/vscode/README.md)。无需 npm、`.vsix` 或扩展市场。
 
 ### Typora
 
@@ -122,6 +134,7 @@ cp themes/ghostty/claude-cream-light themes/ghostty/claude-cream-dark \
 | Typora | 1.5+ | Windows / macOS / Linux |
 | Obsidian | 1.4.0+ | 全平台 |
 | Ghostty | 1.0+ | macOS / Linux |
+| Cursor / VS Code | VS Code API 1.85+ | 两者共用主题扩展 |
 | Website 主题 | 现代浏览器 | 需要支持 `color-mix()` |
 | macOS | 12+ | PingFang SC 系统字体 |
 

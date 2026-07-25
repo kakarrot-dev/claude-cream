@@ -25,7 +25,7 @@ Claude Cream
 ### 项目定位
 
 ```text
-暖色调设计 token 与主题资产库，为 Typora、Obsidian、Ghostty、Website 与插画生成提供统一视觉语言。
+暖色调设计 token 与主题资产库，为 Cursor / VS Code、Typora、Obsidian、Ghostty、Website 与插画生成提供统一视觉语言。
 ```
 
 ### 主要用户
@@ -37,7 +37,7 @@ Claude Cream
 ### 核心目标
 
 ```text
-以 tokens/tokens.json 为编辑器与终端主题的单一真源，同时独立管理 Website 色板与插画生成规范。
+以 tokens/tokens.json 为 Cursor / VS Code、编辑器与终端主题的单一真源，同时独立管理 Website 色板与插画生成规范。
 ```
 
 ### 非目标
@@ -75,7 +75,7 @@ Claude Cream
 ### UI 与样式
 
 ```text
-Design Tokens（JSON）→ Typora CSS、Obsidian CSS、Ghostty palette、CLI 配置模板
+Design Tokens（JSON）→ Cursor / VS Code Theme JSON、Typora CSS、Obsidian CSS、Ghostty palette、CLI 配置模板
 ```
 
 ### 状态管理
@@ -148,6 +148,14 @@ mkdir -p "$HOME/.config/ghostty/themes"
 cp themes/ghostty/config.ghostty "$HOME/.config/ghostty/config"
 cp themes/ghostty/claude-cream-light themes/ghostty/claude-cream-dark \
   "$HOME/.config/ghostty/themes/"
+
+# Cursor（macOS / Linux）
+mkdir -p "$HOME/.cursor/extensions"
+rm -rf "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
+cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
+
+# Cursor / VS Code 主题静态验证
+themes/vscode/scripts/validate-theme.sh
 ```
 
 ### Lint
@@ -186,6 +194,7 @@ tokens/
   tokens.json             设计 token 单一真源（SSOT）
   README.md               token 分组与生成说明
 themes/
+  vscode/                 Cursor / VS Code 五模式主题、验证脚本与视觉 Fixtures
   typora/                 Typora Light/Dark 主题 CSS
   obsidian/               Obsidian 主题 + Style Settings
   ghostty/                Ghostty 主题与主配置
@@ -218,6 +227,7 @@ CLAUDE.md                 本仓 Claude Code 入口
 
 - `README.md` / `README.zh-CN.md`：安装、结构、设计原则
 - `tokens/README.md`：token 分组与生成约定
+- `themes/vscode/README.md`：Cursor / VS Code 主题、GitHub 下载与跨平台安装说明
 - `tasks/specs/`：已确认需求
 - `tasks/plans/`：已确认实现计划
 
@@ -595,10 +605,11 @@ Plan 必须具体到可以执行和验证，避免使用「完善功能」「优
 建议顺序：
 
 1. 确认 `tokens/tokens.json` 与目标主题文件一致
-2. 检查 Typora 主题文件名是否使用连字符
-3. 需要时 `cp` 到目标客户端并目视核对
-4. `git diff --check`
-5. SVG 变更可用 `xmllint` 检查
+2. 修改 Cursor / VS Code 时运行 `themes/vscode/scripts/validate-theme.sh`
+3. 检查 Typora 主题文件名是否使用连字符
+4. 需要时 `cp` 到目标客户端并目视核对
+5. `git diff --check`
+6. SVG 变更可用 `xmllint` 检查
 
 ### Bug 修复
 
@@ -830,13 +841,13 @@ Git：
 1. 暖色优先，不做冷灰白
 2. 克制衬线：正文用 PingFang SC，避免跨平台衬线崩坏
 3. 本地优先：离线可用，不依赖付费字体或云服务
-4. 真源边界：`tokens/tokens.json` 驱动 Typora、Obsidian 与 Ghostty，Website 与 Illustration 独立记录来源
+4. 真源边界：`tokens/tokens.json` 驱动 Cursor / VS Code、Typora、Obsidian 与 Ghostty，Website 与 Illustration 独立记录来源
 5. 精简自定义：只暴露页宽、字号、主色等关键项
 
 改色 / 字体 / 间距 / 圆角 / 语法高亮：
 
 1. 先改 `tokens/tokens.json`
-2. 再映射到 Typora / Obsidian / Ghostty 产物
+2. 再映射到 Cursor / VS Code、Typora、Obsidian、Ghostty 产物
 3. 需要时更新 `tokens/README.md` 分组说明
 
 ### 21.2 各客户端安装路径
@@ -846,8 +857,21 @@ Git：
 | Typora | `cp` 主题 CSS 到各系统 Typora themes 目录 |
 | Obsidian | `cp -R themes/obsidian` 到目标 vault 的 `.obsidian/themes/Claude Cream` |
 | Ghostty | `cp` config 与 light/dark 主题到 `~/.config/ghostty/` |
+| Cursor / VS Code | 从 GitHub 下载后复制 `themes/vscode` 到对应 `extensions/kakarrot.claude-cream-<version>` |
 
-### 21.3 Typora 文件名必须连字符
+### 21.3 Cursor / VS Code 主题约束
+
+- GitHub 仓库是唯一分发入口，不生成 `.vsix`，不发布扩展市场。
+- 默认安装方式是复制 `themes/vscode`，不要求 npm、yarn、`vsce` 或构建器。
+- `package.json` 声明的主题文件必须全部存在，版本与 README 安装目录一致。
+- 默认 Light / Dark 的工作台颜色键必须对称。
+- 辅助主题使用 VS Code 原生 `include` 继承默认主题，只覆盖模式差异。
+- `editor` 与 `syntax` 五模式必须保持同名字段。
+- 修改后运行 `themes/vscode/scripts/validate-theme.sh`。
+- 实际视觉验收使用 `themes/vscode/fixtures/`，至少检查 Python、TypeScript、JSON、Markdown、Diff、终端、Command Palette 与 Peek / Debug。
+- 全局 `workbench.colorCustomizations` 会覆盖主题；只针对某主题的调整必须限定到 `[Claude Cream ...]`。
+
+### 21.4 Typora 文件名必须连字符
 
 - Typora 主题文件名必须使用连字符（hyphen），例如 `claude-theme.css`。
 - 禁止下划线文件名，否则 Typora 无法加载。
