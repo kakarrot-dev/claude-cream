@@ -25,7 +25,7 @@ Claude Cream
 ### 项目定位
 
 ```text
-暖色调设计 token 与主题资产库，为 Codex、Cursor / VS Code、Typora、Obsidian、Ghostty、Website 与插画生成提供统一视觉语言。
+暖色调设计 token 与主题资产库，为 Codex、Cursor / VS Code、Zed、Typora、Obsidian、Ghostty、Website 与插画生成提供统一视觉语言。
 ```
 
 ### 主要用户
@@ -37,7 +37,7 @@ Claude Cream
 ### 核心目标
 
 ```text
-以 tokens/tokens.json 为 Codex、Cursor / VS Code、编辑器与终端主题的单一真源，同时独立管理 Website 色板与插画生成规范。
+以 tokens/tokens.json 为 Codex、Cursor / VS Code、Zed、编辑器与终端主题的单一真源，同时独立管理 Website 色板与插画生成规范。
 ```
 
 ### 非目标
@@ -75,7 +75,7 @@ Claude Cream
 ### UI 与样式
 
 ```text
-Design Tokens（JSON）→ Cursor / VS Code Theme JSON、Typora CSS、Obsidian CSS、Ghostty palette、CLI 配置模板
+Design Tokens（JSON）→ Cursor / VS Code Theme JSON、Zed Theme JSON、Typora CSS、Obsidian CSS、Ghostty palette、CLI 配置模板
 ```
 
 ### 状态管理
@@ -156,6 +156,13 @@ cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
 
 # Cursor / VS Code 主题静态验证
 themes/vscode/scripts/validate-theme.sh
+
+# Zed（macOS / Linux）
+mkdir -p "$HOME/.config/zed/themes"
+cp themes/zed/claude-cream.json "$HOME/.config/zed/themes/"
+
+# Zed 主题静态验证
+jq empty themes/zed/claude-cream.json
 ```
 
 ### Lint
@@ -196,6 +203,7 @@ tokens/
 themes/
   codex/                  Codex Light/Dark 可导入主题与说明
   vscode/                 Cursor / VS Code 五模式主题、验证脚本与视觉 Fixtures
+  zed/                    Zed Light/Dark 本地主题与安装说明
   typora/                 Typora Light/Dark 主题 CSS
   obsidian/               Obsidian 主题 + Style Settings
   ghostty/                Ghostty 主题与主配置
@@ -230,6 +238,7 @@ CLAUDE.md                 本仓 Claude Code 入口
 - `tokens/README.md`：token 分组与生成约定
 - `themes/codex/README.md`：Codex 主题导入、token 映射与兼容性说明
 - `themes/vscode/README.md`：Cursor / VS Code 主题、GitHub 下载与跨平台安装说明
+- `themes/zed/README.md`：Zed 本地主题安装、token 映射与验证说明
 - `tasks/specs/`：已确认需求
 - `tasks/plans/`：已确认实现计划
 
@@ -548,7 +557,7 @@ Plan 必须具体到可以执行和验证，避免使用「完善功能」「优
 - 中文优先：正文 PingFang SC，代码 JetBrains Mono。
 - 暖色优先：不做冷灰白工业风。
 - 精简自定义：只暴露页宽、字号、主色等真正常用项。
-- 修改共享 token 时，检查 Typora / Obsidian / Ghostty 是否同步。
+- 修改共享 token 时，检查 Codex / Cursor / VS Code / Zed / Typora / Obsidian / Ghostty 是否同步。
 
 涉及视觉修改时，应尽量在目标客户端实际打开验证，而不是只依赖静态代码检查。
 
@@ -609,10 +618,11 @@ Plan 必须具体到可以执行和验证，避免使用「完善功能」「优
 1. 确认 `tokens/tokens.json` 与目标主题文件一致
 2. 修改 Codex 时校验 `codex-theme-v1:` 前缀、JSON schema、Light/Dark variant 与 token 映射
 3. 修改 Cursor / VS Code 时运行 `themes/vscode/scripts/validate-theme.sh`
-4. 检查 Typora 主题文件名是否使用连字符
-5. 需要时导入或 `cp` 到目标客户端并目视核对
-6. `git diff --check`
-7. SVG 变更可用 `xmllint` 检查
+4. 修改 Zed 时运行 `jq empty themes/zed/claude-cream.json`，并按官方 `themes/v0.2.0` schema 检查字段、Light/Dark 对称性与 token 映射
+5. 检查 Typora 主题文件名是否使用连字符
+6. 需要时导入或 `cp` 到目标客户端并目视核对
+7. `git diff --check`
+8. SVG 变更可用 `xmllint` 检查
 
 ### Bug 修复
 
@@ -844,13 +854,13 @@ Git：
 1. 暖色优先，不做冷灰白
 2. 克制衬线：正文用 PingFang SC，避免跨平台衬线崩坏
 3. 本地优先：离线可用，不依赖付费字体或云服务
-4. 真源边界：`tokens/tokens.json` 驱动 Codex、Cursor / VS Code、Typora、Obsidian 与 Ghostty，Website 与 Illustration 独立记录来源
+4. 真源边界：`tokens/tokens.json` 驱动 Codex、Cursor / VS Code、Zed、Typora、Obsidian 与 Ghostty，Website 与 Illustration 独立记录来源
 5. 精简自定义：只暴露页宽、字号、主色等关键项
 
 改色 / 字体 / 间距 / 圆角 / 语法高亮：
 
 1. 先改 `tokens/tokens.json`
-2. 再映射到 Codex、Cursor / VS Code、Typora、Obsidian、Ghostty 产物
+2. 再映射到 Codex、Cursor / VS Code、Zed、Typora、Obsidian、Ghostty 产物
 3. 需要时更新 `tokens/README.md` 分组说明
 
 ### 21.2 各客户端安装路径
@@ -862,6 +872,7 @@ Git：
 | Obsidian | `cp -R themes/obsidian` 到目标 vault 的 `.obsidian/themes/Claude Cream` |
 | Ghostty | `cp` config 与 light/dark 主题到 `~/.config/ghostty/` |
 | Cursor / VS Code | 从 GitHub 下载后复制 `themes/vscode` 到对应 `extensions/kakarrot.claude-cream-<version>` |
+| Zed | `cp themes/zed/claude-cream.json` 到 `~/.config/zed/themes/` |
 
 ### 21.3 Codex 主题约束
 
@@ -889,3 +900,12 @@ Git：
 - Typora 主题文件名必须使用连字符（hyphen），例如 `claude-theme.css`。
 - 禁止下划线文件名，否则 Typora 无法加载。
 - 新增或重命名 Typora 主题文件时先检查此约束。
+
+### 21.6 Zed 主题约束
+
+- 本地主题保存为 `themes/zed/claude-cream.json`，一个主题族同时包含 `Claude Cream Light` 与 `Claude Cream Dark`。
+- 主题必须使用 Zed 官方 `https://zed.dev/schema/themes/v0.2.0.json` schema。
+- Light / Dark 的 `style` 字段必须对称，语法高亮分别映射自 `syntax.light` / `syntax.dark`。
+- 编辑器表面映射自 `editor.light` / `editor.dark`，文本、边框和状态色映射自 `colors.light` / `colors.dark`。
+- 修改后至少运行 JSON 解析、schema 字段检查、Light / Dark 字段对称性、语法 token 映射检查和 `git diff --check`。
+- 无法实际打开 Zed 时，只能报告静态验证通过，导入与视觉验收保持未验证。

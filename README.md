@@ -13,13 +13,13 @@
 [![Palette](https://img.shields.io/badge/palette-warm_ivory_+_amber-b7791f)](https://github.com/kakarrot-dev/claude-cream)
 [![Mode](https://img.shields.io/badge/mode-light_+_dark-2d2e2d)](https://github.com/kakarrot-dev/claude-cream)
 [![Font](https://img.shields.io/badge/font-PingFang_SC_+_JetBrains_Mono-3d3d3a)](https://github.com/kakarrot-dev/claude-cream)
-[![Themes](https://img.shields.io/badge/themes-7_families-dccebf)](#whats-inside)
+[![Themes](https://img.shields.io/badge/themes-8_families-dccebf)](#whats-inside)
 [![Codex](https://img.shields.io/badge/Codex-light_+_dark-e6bf7a)](themes/codex/README.md)
 [![License](https://img.shields.io/badge/license-MIT-b7791f)](./LICENSE)
 
 [中文版](README.zh-CN.md)
 
-A warm editorial theme library for Codex, Cursor / VS Code, Typora, Obsidian, Ghostty, websites, and reusable illustration generation.
+A warm editorial theme library for Codex, Cursor / VS Code, Zed, Typora, Obsidian, Ghostty, websites, and reusable illustration generation.
 
 Inspired by the [Claude.com](https://claude.com) visual language: layered warm surfaces, restrained amber accents, and a typographic sensibility that makes code feel editorial rather than industrial.
 
@@ -31,7 +31,7 @@ Inspired by the [Claude.com](https://claude.com) visual language: layered warm s
 - **Amber accent** `#b7791f` — restrained, warm, and clear in interactive states
 - **Warm charcoal dark canvas** `#2d2e2d` — depth without a hard black backdrop
 - **Chinese-first typography** — PingFang SC system font for prose, JetBrains Mono for code
-- **One visual language, seven theme assets** — Codex, Cursor / VS Code, Typora, Obsidian, Ghostty, Website, and Illustration
+- **One visual language, eight theme assets** — Codex, Cursor / VS Code, Zed, Typora, Obsidian, Ghostty, Website, and Illustration
 
 ## What's Inside
 
@@ -43,6 +43,7 @@ claude-cream/
 │   ├── obsidian/            # Dual-mode knowledge-base theme
 │   ├── ghostty/             # Terminal palettes + Ghostty config
 │   ├── vscode/              # Five Cursor / VS Code themes
+│   ├── zed/                 # Zed Light + Dark local theme
 │   ├── website/             # Website Light + Dark color theme
 │   └── illustration/        # Image-generation style + prompt template
 ├── img/brand/               # Project logo and banner
@@ -52,7 +53,7 @@ claude-cream/
 
 ### Design Tokens
 
-`tokens/tokens.json` is the single source of truth for Codex, Cursor / VS Code, Typora, Obsidian, and Ghostty themes.
+`tokens/tokens.json` is the single source of truth for Codex, Cursor / VS Code, Zed, Typora, Obsidian, and Ghostty themes.
 
 | Group | Description |
 |---|---|
@@ -62,7 +63,7 @@ claude-cream/
 | `spacing` / `rounded` | 8 spacing steps + 6 border-radius steps |
 | `syntax.*` | Five-mode syntax highlighting tokens |
 
-`tokens/tokens.json` drives Codex, Cursor / VS Code, Typora, Obsidian, and Ghostty through manual mapping. `themes/website` is a separately managed snapshot of the blog palette, while `themes/illustration` turns that website language into reusable image-generation rules.
+`tokens/tokens.json` drives Codex, Cursor / VS Code, Zed, Typora, Obsidian, and Ghostty through manual mapping. `themes/website` is a separately managed snapshot of the blog palette, while `themes/illustration` turns that website language into reusable image-generation rules.
 
 ## Install
 
@@ -79,6 +80,15 @@ cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
 ```
 
 Run `Developer: Reload Window`, then select one of the five Claude Cream themes from `Preferences: Color Theme`. The GitHub download, VS Code, Windows, update, and validation instructions are in [`themes/vscode/README.md`](themes/vscode/README.md). No npm, `.vsix`, or marketplace installation is required.
+
+### Zed
+
+```bash
+mkdir -p "$HOME/.config/zed/themes"
+cp themes/zed/claude-cream.json "$HOME/.config/zed/themes/"
+```
+
+Open Zed's Theme Selector and choose `Claude Cream Light` or `Claude Cream Dark`. System-mode settings and Windows installation are documented in [`themes/zed/README.md`](themes/zed/README.md).
 
 ### Typora
 
@@ -147,6 +157,7 @@ Each theme folder contains its own README with installation, mapping, and valida
 | Obsidian | 1.4.0+ | All platforms |
 | Ghostty | 1.0+ | macOS / Linux |
 | Cursor / VS Code | VS Code API 1.85+ | Shared theme extension |
+| Zed | Supports local themes schema v0.2.0 | Light + Dark in one theme family |
 | Website theme | Modern browser | Requires `color-mix()` support |
 | macOS | 12+ | PingFang SC system font |
 
