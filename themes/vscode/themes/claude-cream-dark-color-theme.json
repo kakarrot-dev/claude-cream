@@ -227,7 +227,7 @@
     "welcomePage.buttonHoverBackground": "#55544f"
   },
   "tokenColors": [
-    { "scope": ["comment", "punctuation.definition.comment"], "settings": { "foreground": "#7f857c", "fontStyle": "italic" } },
+    { "scope": ["comment", "punctuation.definition.comment"], "settings": { "foreground": "#9da39a", "fontStyle": "italic" } },
     { "scope": ["string", "constant.other.symbol"], "settings": { "foreground": "#b5c88d" } },
     { "scope": ["markup.inline.raw", "markup.inline.raw.string.markdown"], "settings": { "foreground": "#b5c88d", "background": "#2d2e2d", "fontStyle": "" } },
     { "scope": ["constant.numeric", "constant.language", "constant.character"], "settings": { "foreground": "#d19a66" } },
@@ -272,7 +272,7 @@
     "function": "#e5c07b",
     "method": "#e5c07b",
     "keyword": "#c891d9",
-    "comment": { "foreground": "#7f857c", "italic": true },
+    "comment": { "foreground": "#9da39a", "italic": true },
     "string": "#b5c88d",
     "number": "#d19a66",
     "regexp": "#75b5bc",

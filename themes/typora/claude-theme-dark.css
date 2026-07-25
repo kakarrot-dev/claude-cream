@@ -11,6 +11,8 @@
     /* Colors — Dark Palette */
     --primary: #e6bf7a;
     --primary-active: #f0cf92;
+    --text-accent: #e6bf7a;
+    --text-accent-hover: #f0cf92;
     --primary-disabled: #55544f;
     --ink: #e9e6dc;
     --body: #ddd9cd;
@@ -38,7 +40,7 @@
     --code-inline-bg: rgba(229, 229, 226, 0.06);
     --code-border: rgba(203, 199, 187, 0.14);
     --code-normal: #abb2bf;
-    --code-comment: #7f857c;
+    --code-comment: #9da39a;
     --code-keyword: #c891d9;
     --code-string: #b5c88d;
     --code-number: #d19a66;

@@ -157,6 +157,9 @@ cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
 # Cursor / VS Code 主题静态验证
 themes/vscode/scripts/validate-theme.sh
 
+# 全平台主题静态验证
+python3 scripts/validate.py
+
 # Zed（macOS / Linux）
 mkdir -p "$HOME/.config/zed/themes"
 cp themes/zed/claude-cream.json "$HOME/.config/zed/themes/"

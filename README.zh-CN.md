@@ -44,7 +44,7 @@ claude-cream/
 │   └── image-generation/    # 插画、头像与壁纸生成提示词
 ├── img/brand/               # 项目 Logo 与横幅
 ├── tokens/                  # 跨平台共享设计 token（单一真源）
-└── tasks/                   # 项目跟踪
+└── scripts/                 # 无依赖跨平台校验
 ```
 
 ### 设计 Token
@@ -53,7 +53,7 @@ claude-cream/
 
 | 分组 | 说明 |
 |---|---|
-| `colors.light` / `colors.dark` | 每种模式 26 个语义色变量 |
+| `colors.light` / `colors.dark` | 每种模式 28 个语义色变量 |
 | `editor.*` | 五模式编辑器表面、状态、焦点、选区与 Diff |
 | `typography` | 字体栈 + 字号 + 行高 |
 | `spacing` / `rounded` | 间距 8 档 + 圆角 6 档 |
@@ -90,19 +90,22 @@ cp themes/zed/claude-cream.json "$HOME/.config/zed/themes/"
 
 ```bash
 # macOS
-cp themes/typora/claude-theme.css themes/typora/claude-theme-dark.css \
+cp themes/typora/*.css themes/typora/.claude-theme-base.css \
   "$HOME/Library/Application Support/abnerworks.Typora/themes/"
-osascript -e 'quit app "Typora"' && sleep 1 && open -a Typora
 ```
 
 Windows：`%APPDATA%\Typora\themes\` &middot; Linux：`~/.config/Typora/themes/`
 
 > 主题文件名必须用**连字符**，否则 Typora 无法加载。
+>
+> 复制前请保存已打开的文档，复制后手动重启 Typora。
 
 ### Obsidian
 
 ```bash
-cp -R themes/obsidian "$HOME/Dev/obsidian-wiki/.obsidian/themes/Claude Cream"
+VAULT="/path/to/your/vault"
+mkdir -p "$VAULT/.obsidian/themes"
+cp -R themes/obsidian "$VAULT/.obsidian/themes/Claude Cream"
 ```
 
 进入 Obsidian &rarr; 设置 &rarr; 外观 &rarr; 主题 &rarr; 选择 Claude Cream。深色模式跟随 Obsidian 原生切换联动。
@@ -113,12 +116,17 @@ cp -R themes/obsidian "$HOME/Dev/obsidian-wiki/.obsidian/themes/Claude Cream"
 
 ```bash
 mkdir -p "$HOME/.config/ghostty/themes"
-cp themes/ghostty/config.ghostty "$HOME/.config/ghostty/config"
 cp themes/ghostty/claude-cream-light themes/ghostty/claude-cream-dark \
   "$HOME/.config/ghostty/themes/"
 ```
 
-重启 Ghostty，自动跟随系统外观切换。
+在现有 `~/.config/ghostty/config` 中加入下列配置，然后重启 Ghostty：
+
+```ini
+theme = light:claude-cream-light,dark:claude-cream-dark
+```
+
+可选的 [`config.ghostty`](themes/ghostty/config.ghostty) 是一份完整的个人化配置。请先检查并按需合并，不要直接覆盖现有配置。
 
 ### Website
 
@@ -135,6 +143,15 @@ cp themes/ghostty/claude-cream-light themes/ghostty/claude-cream-dark \
 组合使用 [`themes/image-generation/illustration-prompt-template.md`](themes/image-generation/illustration-prompt-template.md) 与 [`themes/image-generation/style.json`](themes/image-generation/style.json)，生成与 Website 一致的封面和编辑插画。同一目录还提供[个人社交头像](themes/image-generation/avatar-prompt-template.md)和[桌面或移动端壁纸](themes/image-generation/wallpaper-prompt-template.md)提示词。
 
 每个主题目录均提供独立 README，说明安装、映射关系与验证方式。
+
+## 校验
+
+修改 Token 或主题后运行无依赖跨平台校验：
+
+```bash
+python3 scripts/validate.py
+git diff --check
+```
 
 ## 设计原则
 

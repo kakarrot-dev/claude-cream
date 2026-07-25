@@ -10,7 +10,7 @@
     "errorForeground": "#7c1b13",
     "selection.background": "#e6d7b7",
     "textLink.foreground": "#9f6819",
-    "textLink.activeForeground": "#b7791f",
+    "textLink.activeForeground": "#8a5a12",
     "textBlockQuote.background": "#f0eee6",
     "textBlockQuote.border": "#b7791f",
     "textCodeBlock.background": "#f0eee6",
@@ -227,7 +227,7 @@
     "welcomePage.buttonHoverBackground": "#d8d2c3"
   },
   "tokenColors": [
-    { "scope": ["comment", "punctuation.definition.comment"], "settings": { "foreground": "#80796c", "fontStyle": "italic" } },
+    { "scope": ["comment", "punctuation.definition.comment"], "settings": { "foreground": "#756e62", "fontStyle": "italic" } },
     { "scope": ["string", "constant.other.symbol"], "settings": { "foreground": "#536b2c" } },
     { "scope": ["markup.inline.raw", "markup.inline.raw.string.markdown"], "settings": { "foreground": "#536b2c", "background": "#f8f7f2", "fontStyle": "" } },
     { "scope": ["constant.numeric", "constant.language", "constant.character"], "settings": { "foreground": "#8a5e16" } },
@@ -272,7 +272,7 @@
     "function": "#8a5e16",
     "method": "#8a5e16",
     "keyword": "#6f3f82",
-    "comment": { "foreground": "#80796c", "italic": true },
+    "comment": { "foreground": "#756e62", "italic": true },
     "string": "#536b2c",
     "number": "#8a5e16",
     "regexp": "#2c6f75",

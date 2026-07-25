@@ -48,7 +48,7 @@ claude-cream/
 │   └── image-generation/    # Illustration, avatar, and wallpaper prompts
 ├── img/brand/               # Project logo and banner
 ├── tokens/                  # Shared design tokens, single source of truth
-└── tasks/                   # Project tracking
+└── scripts/                 # Dependency-free cross-platform validation
 ```
 
 ### Design Tokens
@@ -57,7 +57,7 @@ claude-cream/
 
 | Group | Description |
 |---|---|
-| `colors.light` / `colors.dark` | 26 semantic color variables per mode |
+| `colors.light` / `colors.dark` | 28 semantic color variables per mode |
 | `editor.*` | Five-mode editor surfaces, states, focus, selection, and Diff |
 | `typography` | Font stacks, sizes, line heights |
 | `spacing` / `rounded` | 8 spacing steps + 6 border-radius steps |
@@ -96,17 +96,20 @@ Open Zed's Theme Selector and choose `Claude Cream Light` or `Claude Cream Dark`
 # macOS
 cp themes/typora/*.css themes/typora/.claude-theme-base.css \
   "$HOME/Library/Application Support/abnerworks.Typora/themes/"
-osascript -e 'quit app "Typora"' && sleep 1 && open -a Typora
 ```
 
 Windows: `%APPDATA%\Typora\themes\` &middot; Linux: `~/.config/Typora/themes/`
 
 > Theme file names must use **hyphens** — Typora rejects underscores.
+>
+> Save open documents and restart Typora manually after copying the files.
 
 ### Obsidian
 
 ```bash
-cp -R themes/obsidian "$HOME/Dev/obsidian-wiki/.obsidian/themes/Claude Cream"
+VAULT="/path/to/your/vault"
+mkdir -p "$VAULT/.obsidian/themes"
+cp -R themes/obsidian "$VAULT/.obsidian/themes/Claude Cream"
 ```
 
 Then: Settings &rarr; Appearance &rarr; Themes &rarr; Claude Cream. Dark mode follows Obsidian's native toggle.
@@ -117,12 +120,17 @@ Works with the [Style Settings](obsidian://show-plugin?id=obsidian-style-setting
 
 ```bash
 mkdir -p "$HOME/.config/ghostty/themes"
-cp themes/ghostty/config.ghostty "$HOME/.config/ghostty/config"
 cp themes/ghostty/claude-cream-light themes/ghostty/claude-cream-dark \
   "$HOME/.config/ghostty/themes/"
 ```
 
-Restart Ghostty. Auto-switches with system appearance.
+Add this line to your existing `~/.config/ghostty/config`, then restart Ghostty:
+
+```ini
+theme = light:claude-cream-light,dark:claude-cream-dark
+```
+
+The optional [`config.ghostty`](themes/ghostty/config.ghostty) is a complete opinionated configuration. Review and merge the settings you want instead of replacing your existing config.
 
 ### Website
 
@@ -139,6 +147,15 @@ Switch modes with `html[data-theme="light"]` and `html[data-theme="dark"]`. See 
 Use [`themes/image-generation/illustration-prompt-template.md`](themes/image-generation/illustration-prompt-template.md) with [`themes/image-generation/style.json`](themes/image-generation/style.json) to create covers and editorial images that match the website. The same directory also includes prompts for [personal social avatars](themes/image-generation/avatar-prompt-template.md) and [desktop or mobile wallpapers](themes/image-generation/wallpaper-prompt-template.md).
 
 Each theme folder contains its own README with installation, mapping, and validation notes.
+
+## Validate
+
+Run the dependency-free cross-platform checks after changing tokens or themes:
+
+```bash
+python3 scripts/validate.py
+git diff --check
+```
 
 ## Design Principles
 

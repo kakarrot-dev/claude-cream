@@ -52,7 +52,7 @@
     "peekViewResult.background": "#30312f"
   },
   "tokenColors": [
-    { "scope": ["comment", "punctuation.definition.comment"], "settings": { "foreground": "#858a82", "fontStyle": "italic" } },
+    { "scope": ["comment", "punctuation.definition.comment"], "settings": { "foreground": "#a6aaa3", "fontStyle": "italic" } },
     { "scope": ["string", "constant.other.symbol", "markup.inline.raw"], "settings": { "foreground": "#a9bc83", "background": "#343533" } },
     { "scope": ["constant.numeric", "constant.language", "constant.character"], "settings": { "foreground": "#c58f62" } },
     { "scope": ["keyword", "storage.type", "storage.modifier"], "settings": { "foreground": "#bd8bca" } },
@@ -74,7 +74,7 @@
     "function": "#d6b875",
     "method": "#d6b875",
     "keyword": "#bd8bca",
-    "comment": { "foreground": "#858a82", "italic": true },
+    "comment": { "foreground": "#a6aaa3", "italic": true },
     "string": "#a9bc83",
     "number": "#c58f62",
     "operator": "#c7bdb3",

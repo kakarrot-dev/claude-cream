@@ -31,6 +31,8 @@
 # Node（如果将来加了 build script）
 node_modules/
 dist/
+__pycache__/
+*.pyc
 
 # 本地任务草稿（不入库）
 /tasks/
@@ -39,6 +41,7 @@ dist/
 /*
 !/themes/
 !/tokens/
+!/scripts/
 !/img/
 !/LICENSE
 !/markdown-showcase.md

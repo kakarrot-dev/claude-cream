@@ -147,14 +147,14 @@ body {
 }
 
 #write a {
-    color: var(--primary);
+    color: var(--text-accent);
     text-decoration: underline;
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
 }
 
 #write a:hover {
-    color: var(--primary-active);
+    color: var(--text-accent-hover);
 }
 
 /* ============================================================

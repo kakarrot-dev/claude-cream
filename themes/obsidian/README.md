@@ -14,8 +14,10 @@
 ## 安装
 
 ```bash
+VAULT="/path/to/your/vault"
+mkdir -p "$VAULT/.obsidian/themes"
 cp -R themes/obsidian \
-  "$HOME/Dev/obsidian-wiki/.obsidian/themes/Claude Cream"
+  "$VAULT/.obsidian/themes/Claude Cream"
 ```
 
 进入 Obsidian 的“设置 → 外观 → 主题”，选择 `Claude Cream`。如需调整页宽、字号和强调色，可安装 Style Settings 插件。

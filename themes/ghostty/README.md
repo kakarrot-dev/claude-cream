@@ -1,6 +1,6 @@
 # Claude Cream for Ghostty
 
-面向终端与 AI CLI 长文本阅读的暖色 Light / Dark 主题，并提供一份跟随系统外观切换的 Ghostty 主配置。
+面向终端与 AI CLI 长文本阅读的暖色 Light / Dark 主题，并提供一份可选的 Ghostty 完整配置参考。
 
 ## 文件
 
@@ -14,12 +14,17 @@
 
 ```bash
 mkdir -p "$HOME/.config/ghostty/themes"
-cp themes/ghostty/config.ghostty "$HOME/.config/ghostty/config"
 cp themes/ghostty/claude-cream-light themes/ghostty/claude-cream-dark \
   "$HOME/.config/ghostty/themes/"
 ```
 
-重启 Ghostty。`config.ghostty` 使用 `light:claude-cream-light,dark:claude-cream-dark` 跟随系统切换。
+在现有 `~/.config/ghostty/config` 中加入：
+
+```ini
+theme = light:claude-cream-light,dark:claude-cream-dark
+```
+
+重启 Ghostty 后即可跟随系统切换。`config.ghostty` 包含字体、快捷键、剪贴板等完整个人配置，只作为可选参考；请按需合并，不要覆盖已有配置。
 
 ## 设计映射
 

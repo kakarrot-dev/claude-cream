@@ -15,6 +15,8 @@
     /* Colors — Light Palette */
     --primary: #b7791f;
     --primary-active: #9f6819;
+    --text-accent: #8a5a12;
+    --text-accent-hover: #70470e;
     --primary-disabled: #ddd7c6;
     --ink: #29271d;
     --body: #403d36;
@@ -42,7 +44,7 @@
     --code-inline-bg: rgba(61, 57, 41, 0.06);
     --code-border: #d8d2c3;
     --code-normal: #2f3440;
-    --code-comment: #80796c;
+    --code-comment: #756e62;
     --code-keyword: #6f3f82;
     --code-string: #536b2c;
     --code-number: #8a5e16;

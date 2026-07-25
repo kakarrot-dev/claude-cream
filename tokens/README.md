@@ -8,7 +8,7 @@
 
 | 分组 | 键 | 用途 | 消费平台 |
 |---|---|---|---|
-| `colors` | `light.*`, `dark.*` | 颜色体系：画布、强调色、文本、表面、语义色 | Codex、Typora / Obsidian CSS、Ghostty palette、Cursor / VS Code、Zed |
+| `colors` | `light.*`, `dark.*` | 颜色体系：画布、UI 强调色、正文强调色、文本、表面、语义色 | Codex、Typora / Obsidian CSS、Ghostty palette、Cursor / VS Code、Zed |
 | `editor` | 五种模式的编辑器语义角色 | 工作台画布、文字、边框、焦点、选区和 Diff | Cursor / VS Code、Zed |
 | `typography` | `font-*`, `size-*`, `weight-*` | 字体栈（PingFang SC + JetBrains Mono）和字号层级 | 各平台 font-family / font-size 声明 |
 | `spacing` | `xxs` ~ `xxl`, `section` | 间距/内边距，8px 递增体系 | padding / margin 值 |
@@ -24,6 +24,8 @@
 3. 如果新增语法高亮色，同时在 `syntax` 五个模式中添加
 4. 更新本文件“Token 分组”表
 5. 手工同步对应主题文件，并运行定向比对
+
+正文链接与强调文字使用 `text-accent` / `text-accent-hover`；`primary` / `primary-active` 保留给按钮、光标、焦点环和图标等 UI 元素。
 
 ## 如何同步三平台产物
 
@@ -55,5 +57,6 @@ tokens.json → themes/zed/claude-cream.json
 - `colors.light.canvas === "#f5f3e9"` / `colors.dark.canvas === "#2d2e2d"` — 暖象牙与暖炭灰双画布
 - 字体策略：中文 `PingFang SC` 走系统调用，代码使用 `JetBrains Mono`
 - 当前主题产物采用手工映射；修改 token 后必须同步 Codex、Typora、Obsidian、Ghostty、Cursor / VS Code 与 Zed 文件
+- `python3 scripts/validate.py` 检查模式字段对称、关键映射、Codex 分享字符串、Ghostty ANSI 完整性、Typora 文件名和正文对比度
 - Cursor / VS Code 辅助主题使用原生 `include` 继承默认主题，但覆盖值仍来自 `editor` 与 `syntax`
 - 不做衬线标题，统一使用 PingFang SC
