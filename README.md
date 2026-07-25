@@ -13,12 +13,13 @@
 [![Palette](https://img.shields.io/badge/palette-warm_ivory_+_amber-b7791f)](https://github.com/kakarrot-dev/claude-cream)
 [![Mode](https://img.shields.io/badge/mode-light_+_dark-2d2e2d)](https://github.com/kakarrot-dev/claude-cream)
 [![Font](https://img.shields.io/badge/font-PingFang_SC_+_JetBrains_Mono-3d3d3a)](https://github.com/kakarrot-dev/claude-cream)
-[![Themes](https://img.shields.io/badge/themes-Typora_%7C_Obsidian_%7C_Ghostty_%7C_Website-dccebf)](https://github.com/kakarrot-dev/claude-cream)
+[![Themes](https://img.shields.io/badge/themes-7_families-dccebf)](#whats-inside)
+[![Codex](https://img.shields.io/badge/Codex-light_+_dark-e6bf7a)](themes/codex/README.md)
 [![License](https://img.shields.io/badge/license-MIT-b7791f)](./LICENSE)
 
 [中文版](README.zh-CN.md)
 
-A warm editorial theme library for Cursor / VS Code, Typora, Obsidian, Ghostty, websites, and reusable illustration generation.
+A warm editorial theme library for Codex, Cursor / VS Code, Typora, Obsidian, Ghostty, websites, and reusable illustration generation.
 
 Inspired by the [Claude.com](https://claude.com) visual language: layered warm surfaces, restrained amber accents, and a typographic sensibility that makes code feel editorial rather than industrial.
 
@@ -30,13 +31,14 @@ Inspired by the [Claude.com](https://claude.com) visual language: layered warm s
 - **Amber accent** `#b7791f` — restrained, warm, and clear in interactive states
 - **Warm charcoal dark canvas** `#2d2e2d` — depth without a hard black backdrop
 - **Chinese-first typography** — PingFang SC system font for prose, JetBrains Mono for code
-- **One visual language, six theme assets** — Cursor / VS Code, Typora, Obsidian, Ghostty, Website, and Illustration
+- **One visual language, seven theme assets** — Codex, Cursor / VS Code, Typora, Obsidian, Ghostty, Website, and Illustration
 
 ## What's Inside
 
 ```
 claude-cream/
 ├── themes/
+│   ├── codex/               # Importable Codex Light + Dark themes
 │   ├── typora/              # Light + Dark Markdown writing theme
 │   ├── obsidian/            # Dual-mode knowledge-base theme
 │   ├── ghostty/             # Terminal palettes + Ghostty config
@@ -50,7 +52,7 @@ claude-cream/
 
 ### Design Tokens
 
-`tokens/tokens.json` is the single source of truth for Cursor / VS Code, Typora, Obsidian, and Ghostty themes.
+`tokens/tokens.json` is the single source of truth for Codex, Cursor / VS Code, Typora, Obsidian, and Ghostty themes.
 
 | Group | Description |
 |---|---|
@@ -60,9 +62,13 @@ claude-cream/
 | `spacing` / `rounded` | 8 spacing steps + 6 border-radius steps |
 | `syntax.*` | Five-mode syntax highlighting tokens |
 
-`tokens/tokens.json` drives Cursor / VS Code, Typora, Obsidian, and Ghostty through manual mapping. `themes/website` is a separately managed snapshot of the blog palette, while `themes/illustration` turns that website language into reusable image-generation rules.
+`tokens/tokens.json` drives Codex, Cursor / VS Code, Typora, Obsidian, and Ghostty through manual mapping. `themes/website` is a separately managed snapshot of the blog palette, while `themes/illustration` turns that website language into reusable image-generation rules.
 
 ## Install
+
+### Codex
+
+Import the complete contents of [`themes/codex/claude-cream-light.theme`](themes/codex/claude-cream-light.theme) and [`themes/codex/claude-cream-dark.theme`](themes/codex/claude-cream-dark.theme) into their matching sections under Codex → Settings → Appearance. See [`themes/codex/README.md`](themes/codex/README.md) for details.
 
 ### Cursor / VS Code
 
@@ -136,6 +142,7 @@ Each theme folder contains its own README with installation, mapping, and valida
 
 | Platform | Minimum | Notes |
 |---|---|---|
+| Codex | Supports custom theme import | Import Light and Dark separately |
 | Typora | 1.5+ | Windows / macOS / Linux |
 | Obsidian | 1.4.0+ | All platforms |
 | Ghostty | 1.0+ | macOS / Linux |

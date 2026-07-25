@@ -8,7 +8,7 @@
 
 | 分组 | 键 | 用途 | 消费平台 |
 |---|---|---|---|
-| `colors` | `light.*`, `dark.*` | 颜色体系：画布、强调色、文本、表面、语义色 | Typora / Obsidian CSS、Ghostty palette、Cursor / VS Code 工作台 |
+| `colors` | `light.*`, `dark.*` | 颜色体系：画布、强调色、文本、表面、语义色 | Codex、Typora / Obsidian CSS、Ghostty palette、Cursor / VS Code 工作台 |
 | `editor` | 五种模式的编辑器语义角色 | 工作台画布、文字、边框、焦点、选区和 Diff | Cursor / VS Code |
 | `typography` | `font-*`, `size-*`, `weight-*` | 字体栈（PingFang SC + JetBrains Mono）和字号层级 | 各平台 font-family / font-size 声明 |
 | `spacing` | `xxs` ~ `xxl`, `section` | 间距/内边距，8px 递增体系 | padding / margin 值 |
@@ -40,6 +40,9 @@ tokens.json → claude-cream-light / claude-cream-dark
 
 # Cursor / VS Code —— 映射到工作台、TextMate scope 与 Semantic Highlighting
 tokens.json → 默认 Light/Dark + Dark Dimmed + Light/Dark High Contrast
+
+# Codex：映射到可导入的 Light / Dark 主题分享字符串
+tokens.json → claude-cream-light.theme / claude-cream-dark.theme
 ```
 
 ## 设计决策

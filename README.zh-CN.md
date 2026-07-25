@@ -11,9 +11,11 @@
 [![Palette](https://img.shields.io/badge/palette-warm_ivory_+_amber-b7791f)](https://github.com/kakarrot-dev/claude-cream)
 [![Mode](https://img.shields.io/badge/mode-light_+_dark-2d2e2d)](https://github.com/kakarrot-dev/claude-cream)
 [![Font](https://img.shields.io/badge/font-PingFang_SC_+_JetBrains_Mono-3d3d3a)](https://github.com/kakarrot-dev/claude-cream)
-[![License](https://img.shields.io/badge/license-MIT-5db872)](./LICENSE)
+[![Themes](https://img.shields.io/badge/themes-7_families-dccebf)](#目录结构)
+[![Codex](https://img.shields.io/badge/Codex-light_+_dark-e6bf7a)](themes/codex/README.md)
+[![License](https://img.shields.io/badge/license-MIT-b7791f)](./LICENSE)
 
-暖色调主题资产库，覆盖 Cursor / VS Code、Typora、Obsidian、Ghostty、Website 与可复用插画生成规范。
+暖色调主题资产库，覆盖 Codex、Cursor / VS Code、Typora、Obsidian、Ghostty、Website 与可复用插画生成规范。
 
 设计灵感来自 [Claude.com](https://claude.com) 的视觉语言：有层次的暖色表面、克制的琥珀金，以及让代码看起来像印刷物而非工业面板的排版质感。
 
@@ -25,13 +27,14 @@
 - **琥珀金强调** `#b7791f` &mdash; 克制、温暖，同时清晰表达交互状态
 - **暖炭灰深色画布** `#2d2e2d` &mdash; 保持深度而不使用生硬纯黑
 - **中文优先排版** &mdash; 正文用 PingFang SC 系统字体，代码用 JetBrains Mono
-- **一套视觉语言，六类主题资产** &mdash; Cursor / VS Code、Typora、Obsidian、Ghostty、Website 与 Illustration
+- **一套视觉语言，七类主题资产** &mdash; Codex、Cursor / VS Code、Typora、Obsidian、Ghostty、Website 与 Illustration
 
 ## 目录结构
 
 ```
 claude-cream/
 ├── themes/
+│   ├── codex/               # Codex Light + Dark 可导入主题
 │   ├── typora/              # Markdown 写作 Light + Dark 主题
 │   ├── obsidian/            # 知识库双模式主题
 │   ├── ghostty/             # 终端调色板与 Ghostty 配置
@@ -45,7 +48,7 @@ claude-cream/
 
 ### 设计 Token
 
-`tokens/tokens.json` 是 Cursor / VS Code、Typora、Obsidian 与 Ghostty 主题的唯一真源。
+`tokens/tokens.json` 是 Codex、Cursor / VS Code、Typora、Obsidian 与 Ghostty 主题的唯一真源。
 
 | 分组 | 说明 |
 |---|---|
@@ -55,9 +58,13 @@ claude-cream/
 | `spacing` / `rounded` | 间距 8 档 + 圆角 6 档 |
 | `syntax.*` | 五模式代码高亮语义色 |
 
-`tokens/tokens.json` 通过手工映射驱动 Cursor / VS Code、Typora、Obsidian 与 Ghostty。`themes/website` 独立保存博客色板快照，`themes/illustration` 将 Website 视觉语言转化为可复用的图像生成规则。
+`tokens/tokens.json` 通过手工映射驱动 Codex、Cursor / VS Code、Typora、Obsidian 与 Ghostty。`themes/website` 独立保存博客色板快照，`themes/illustration` 将 Website 视觉语言转化为可复用的图像生成规则。
 
 ## 安装
+
+### Codex
+
+进入 Codex → 设置 → 外观，将 [`themes/codex/claude-cream-light.theme`](themes/codex/claude-cream-light.theme) 与 [`themes/codex/claude-cream-dark.theme`](themes/codex/claude-cream-dark.theme) 的完整内容分别导入浅色和深色主题。详细说明见 [`themes/codex/README.md`](themes/codex/README.md)。
 
 ### Cursor / VS Code
 
@@ -131,6 +138,7 @@ cp themes/ghostty/claude-cream-light themes/ghostty/claude-cream-dark \
 
 | 平台 | 最低版本 | 备注 |
 |---|---|---|
+| Codex | 支持自定义主题导入 | 浅色与深色需分别导入 |
 | Typora | 1.5+ | Windows / macOS / Linux |
 | Obsidian | 1.4.0+ | 全平台 |
 | Ghostty | 1.0+ | macOS / Linux |
