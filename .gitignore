@@ -53,3 +53,6 @@ __pycache__/
 
 # Agent 本地任务与规格（不入库）
 tasks/
+
+# 客户端截图原图可能包含本地侧栏、路径或账号信息，仅保留裁切后的公开图
+img/screenshots/raw/

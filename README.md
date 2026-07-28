@@ -33,6 +33,34 @@ Inspired by the [Claude.com](https://claude.com) visual language: layered warm s
 - **Chinese-first typography** — PingFang SC system font for prose, JetBrains Mono for code
 - **One visual language, eight theme assets** — Codex, Cursor / VS Code, Zed, Typora, Obsidian, Ghostty, Website, and Image Generation
 
+## Interface Preview
+
+All images below are real client screenshots. Light is shown on the left and Dark on the right. Project sidebars, personal paths, and account details have been cropped out.
+
+### Codex
+
+![Claude Cream Light and Dark themes in Codex](img/screenshots/codex-light-dark.png)
+
+### Cursor / VS Code
+
+![Claude Cream Light and Dark themes in Cursor and VS Code](img/screenshots/cursor-vscode-light-dark.png)
+
+### Zed
+
+![Claude Cream Light and Dark themes in Zed](img/screenshots/zed-light-dark.png)
+
+### Typora
+
+![Claude Cream Light and Dark themes in Typora](img/screenshots/typora-light-dark.png)
+
+### Obsidian
+
+![Claude Cream Light and Dark themes in Obsidian](img/screenshots/obsidian-light-dark.png)
+
+### Ghostty
+
+![Claude Cream Light and Dark themes in Ghostty](img/screenshots/ghostty-light-dark.png)
+
 ## What's Inside
 
 ```
@@ -46,7 +74,9 @@ claude-cream/
 │   ├── zed/                 # Zed Light + Dark local theme
 │   ├── website/             # Website Light + Dark color theme
 │   └── image-generation/    # Illustration, avatar, and wallpaper prompts
-├── img/brand/               # Project logo and banner
+├── img/
+│   ├── brand/               # Project logo and banner
+│   └── screenshots/         # Real Light / Dark client screenshots
 ├── tokens/                  # Shared design tokens, single source of truth
 └── scripts/                 # Dependency-free cross-platform validation
 ```

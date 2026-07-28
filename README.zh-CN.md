@@ -29,6 +29,34 @@
 - **中文优先排版** &mdash; 正文用 PingFang SC 系统字体，代码用 JetBrains Mono
 - **一套视觉语言，八类主题资产** &mdash; Codex、Cursor / VS Code、Zed、Typora、Obsidian、Ghostty、Website 与 Image Generation
 
+## 界面预览
+
+以下均为真实客户端截图，左侧为 Light，右侧为 Dark。画面已裁去项目侧栏、个人路径与账号信息。
+
+### Codex
+
+![Codex 的 Claude Cream Light 与 Dark 主题对照](img/screenshots/codex-light-dark.png)
+
+### Cursor / VS Code
+
+![Cursor 与 VS Code 的 Claude Cream Light 与 Dark 主题对照](img/screenshots/cursor-vscode-light-dark.png)
+
+### Zed
+
+![Zed 的 Claude Cream Light 与 Dark 主题对照](img/screenshots/zed-light-dark.png)
+
+### Typora
+
+![Typora 的 Claude Cream Light 与 Dark 主题对照](img/screenshots/typora-light-dark.png)
+
+### Obsidian
+
+![Obsidian 的 Claude Cream Light 与 Dark 主题对照](img/screenshots/obsidian-light-dark.png)
+
+### Ghostty
+
+![Ghostty 的 Claude Cream Light 与 Dark 主题对照](img/screenshots/ghostty-light-dark.png)
+
 ## 目录结构
 
 ```
@@ -42,7 +70,9 @@ claude-cream/
 │   ├── zed/                 # Zed Light + Dark 本地主题
 │   ├── website/             # Website 色彩主题（Light + Dark）
 │   └── image-generation/    # 插画、头像与壁纸生成提示词
-├── img/brand/               # 项目 Logo 与横幅
+├── img/
+│   ├── brand/               # 项目 Logo 与横幅
+│   └── screenshots/         # 客户端 Light / Dark 实机截图
 ├── tokens/                  # 跨平台共享设计 token（单一真源）
 └── scripts/                 # 无依赖跨平台校验
 ```
