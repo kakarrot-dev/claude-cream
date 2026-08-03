@@ -14,7 +14,7 @@ dark_file="$themes_dir/claude-cream-dark-color-theme.json"
 jq empty "$tokens_file" "$package_file" "$themes_dir"/*.json
 
 jq -e '
-  .version == "0.2.0"
+  .version == "1.0.0"
   and (.contributes.themes | length) == 5
   and ([.contributes.themes[].label] | unique | length) == 5
 ' "$package_file" >/dev/null

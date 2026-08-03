@@ -105,8 +105,8 @@ Import the complete contents of [`themes/codex/claude-cream-light.theme`](themes
 
 ```bash
 mkdir -p "$HOME/.cursor/extensions"
-rm -rf "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
-cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
+rm -rf "$HOME/.cursor/extensions/kakarrot.claude-cream-1.0.0"
+cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-1.0.0"
 ```
 
 Run `Developer: Reload Window`, then select one of the five Claude Cream themes from `Preferences: Color Theme`. The GitHub download, VS Code, Windows, update, and validation instructions are in [`themes/vscode/README.md`](themes/vscode/README.md). No npm, `.vsix`, or marketplace installation is required.

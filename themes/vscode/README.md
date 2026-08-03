@@ -22,16 +22,16 @@ Cursor：
 
 ```bash
 mkdir -p "$HOME/.cursor/extensions"
-rm -rf "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
-cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
+rm -rf "$HOME/.cursor/extensions/kakarrot.claude-cream-1.0.0"
+cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-1.0.0"
 ```
 
 VS Code：
 
 ```bash
 mkdir -p "$HOME/.vscode/extensions"
-rm -rf "$HOME/.vscode/extensions/kakarrot.claude-cream-0.2.0"
-cp -R themes/vscode "$HOME/.vscode/extensions/kakarrot.claude-cream-0.2.0"
+rm -rf "$HOME/.vscode/extensions/kakarrot.claude-cream-1.0.0"
+cp -R themes/vscode "$HOME/.vscode/extensions/kakarrot.claude-cream-1.0.0"
 ```
 
 ### Windows PowerShell
@@ -39,7 +39,7 @@ cp -R themes/vscode "$HOME/.vscode/extensions/kakarrot.claude-cream-0.2.0"
 Cursor：
 
 ```powershell
-$target = "$env:USERPROFILE\.cursor\extensions\kakarrot.claude-cream-0.2.0"
+$target = "$env:USERPROFILE\.cursor\extensions\kakarrot.claude-cream-1.0.0"
 New-Item -ItemType Directory -Force (Split-Path $target) | Out-Null
 Remove-Item -Recurse -Force $target -ErrorAction SilentlyContinue
 Copy-Item -Recurse themes\vscode $target
@@ -48,7 +48,7 @@ Copy-Item -Recurse themes\vscode $target
 VS Code：
 
 ```powershell
-$target = "$env:USERPROFILE\.vscode\extensions\kakarrot.claude-cream-0.2.0"
+$target = "$env:USERPROFILE\.vscode\extensions\kakarrot.claude-cream-1.0.0"
 New-Item -ItemType Directory -Force (Split-Path $target) | Out-Null
 Remove-Item -Recurse -Force $target -ErrorAction SilentlyContinue
 Copy-Item -Recurse themes\vscode $target

@@ -101,8 +101,8 @@ claude-cream/
 
 ```bash
 mkdir -p "$HOME/.cursor/extensions"
-rm -rf "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
-cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-0.2.0"
+rm -rf "$HOME/.cursor/extensions/kakarrot.claude-cream-1.0.0"
+cp -R themes/vscode "$HOME/.cursor/extensions/kakarrot.claude-cream-1.0.0"
 ```
 
 执行 `Developer: Reload Window`，然后在 `Preferences: Color Theme` 中选择五种 Claude Cream 主题之一。GitHub 下载、VS Code、Windows、更新和验证说明见 [`themes/vscode/README.md`](themes/vscode/README.md)。无需 npm、`.vsix` 或扩展市场。
