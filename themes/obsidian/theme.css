@@ -1216,12 +1216,243 @@ select:focus,
 
 /* Metadata block */
 .metadata-container {
+    margin-bottom: 1.25em;
+    color: var(--text-normal);
+}
+
+/* Editing mode: properties are a continuous form, not a stack of boxes. */
+.markdown-source-view.is-live-preview .metadata-container {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+.markdown-source-view.is-live-preview .metadata-properties-heading {
+    margin-bottom: 8px;
+    padding: 0 4px;
+}
+
+.markdown-source-view.is-live-preview .metadata-properties-title {
+    color: var(--text-muted);
+    font-size: var(--font-ui-small);
+    font-weight: 600;
+}
+
+.markdown-source-view.is-live-preview .metadata-properties {
+    gap: 0;
+    overflow: hidden;
+    background-color: var(--background-secondary);
+    border-radius: var(--radius-m);
+}
+
+.markdown-source-view.is-live-preview .metadata-property {
+    gap: 6px;
+    overflow: hidden;
+    min-height: 38px;
+    padding: 2px 8px;
+    background: transparent;
+    border-bottom: 1px solid var(--background-modifier-border);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.markdown-source-view.is-live-preview .metadata-property:last-child {
+    border-bottom: 0;
+}
+
+.markdown-source-view.is-live-preview .metadata-property:hover {
+    background-color: var(--background-modifier-hover);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.markdown-source-view.is-live-preview .metadata-property:focus-within {
     background-color: var(--background-primary-alt);
-    border-radius: var(--radius-xl);
-    padding: 12px 16px;
-    margin-bottom: 1em;
-    border: 1px solid var(--background-modifier-border);
-    box-shadow: var(--claude-shadow-soft);
+    border-radius: 0;
+    box-shadow: inset 2px 0 0 var(--interactive-accent);
+}
+
+.markdown-source-view.is-live-preview .metadata-property-icon {
+    width: 18px;
+    padding-inline-start: 2px;
+    color: var(--text-faint);
+}
+
+.markdown-source-view.is-live-preview .metadata-property-key,
+.markdown-source-view.is-live-preview .metadata-property-value {
+    min-height: 34px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.markdown-source-view.is-live-preview .metadata-property-key {
+    width: 8.5em;
+    min-width: 8.5em;
+    border-inline-end: 1px solid var(--background-modifier-border);
+}
+
+.markdown-source-view.is-live-preview .metadata-property-key:focus-within,
+.markdown-source-view.is-live-preview .metadata-property-value:focus-within {
+    background: transparent;
+    box-shadow: none;
+}
+
+.markdown-source-view.is-live-preview input.metadata-property-key-input {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--text-muted);
+    padding-inline: 8px 12px;
+    font-weight: 500;
+}
+
+.markdown-source-view.is-live-preview .metadata-property-value {
+    color: var(--text-normal);
+}
+
+.markdown-source-view.is-live-preview .metadata-property-value input,
+.markdown-source-view.is-live-preview .metadata-property-value textarea,
+.markdown-source-view.is-live-preview .metadata-property-value .multi-select-container {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding-inline: 10px;
+}
+
+.markdown-source-view.is-live-preview .metadata-add-button {
+    margin-top: 8px;
+    padding-inline-start: 4px;
+    color: var(--text-muted);
+}
+
+/* Reading mode: reuse the editing layout, but keep values informational. */
+.markdown-preview-view .metadata-container {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 1.75em;
+}
+
+.markdown-preview-view .metadata-properties-heading {
+    margin-bottom: 8px;
+    padding: 0 4px;
+}
+
+.markdown-preview-view .metadata-properties-title {
+    color: var(--text-muted);
+    font-size: var(--font-ui-small);
+    font-weight: 600;
+}
+
+.markdown-preview-view .metadata-properties {
+    gap: 0;
+    overflow: hidden;
+    background-color: var(--background-secondary);
+    border-radius: var(--radius-m);
+}
+
+.markdown-preview-view .metadata-property {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    min-height: 38px;
+    padding: 2px 8px;
+    overflow: hidden;
+    background: transparent;
+    border-bottom: 1px solid var(--background-modifier-border);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.markdown-preview-view .metadata-property:last-child {
+    border-bottom: 0;
+}
+
+.markdown-preview-view .metadata-property:hover,
+.markdown-preview-view .metadata-property:focus-within {
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.markdown-preview-view .metadata-add-button,
+.markdown-preview-view .metadata-show-source-button {
+    display: none;
+}
+
+.markdown-preview-view .metadata-property-icon {
+    display: flex;
+    width: 18px;
+    padding-inline-start: 2px;
+    color: var(--text-faint);
+}
+
+.markdown-preview-view .metadata-property-key,
+.markdown-preview-view .metadata-property-value {
+    min-height: 34px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.markdown-preview-view .metadata-property-key {
+    width: 8.5em;
+    min-width: 8.5em;
+    border-inline-end: 1px solid var(--background-modifier-border);
+}
+
+.markdown-preview-view input.metadata-property-key-input {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding-inline: 8px 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.markdown-preview-view .metadata-property-value {
+    color: var(--text-normal);
+}
+
+.markdown-preview-view .metadata-property-value input,
+.markdown-preview-view .metadata-property-value textarea {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding-inline: 10px;
+    color: var(--text-normal);
+    pointer-events: none;
+}
+
+.markdown-preview-view .metadata-property-value .metadata-link-inner,
+.markdown-preview-view .metadata-property-value .multi-select-container {
+    padding-inline: 10px;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .markdown-source-view.is-live-preview .metadata-property-key {
+        width: 7em;
+        min-width: 7em;
+    }
+
+    .markdown-preview-view .metadata-property-key {
+        width: 7em;
+        min-width: 7em;
+    }
 }
 
 /* Image */
