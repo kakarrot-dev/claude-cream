@@ -375,6 +375,11 @@ body.theme-dark {
     border-color: var(--background-modifier-border);
 }
 
+/* Keep pop-out window chrome on the theme surface when translucency is enabled. */
+.is-translucent:not(.is-fullscreen) .titlebar {
+    background-color: var(--titlebar-background);
+}
+
 .view-header {
     background-color: var(--background-secondary);
     border-color: var(--background-modifier-border);
