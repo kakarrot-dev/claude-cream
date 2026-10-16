@@ -781,9 +781,13 @@ body.theme-dark .cm-quote {
     border-color: var(--checkbox-border-color);
 }
 
-/* Table */
-.markdown-rendered table {
+/* Tables fill the note width while columns negotiate space from their content. */
+.markdown-rendered table,
+.markdown-source-view .cm-table-widget table {
+    display: table;
     width: 100%;
+    max-width: 100%;
+    table-layout: auto;
     border-collapse: separate;
     border-spacing: 0;
     border: 1px solid var(--table-border);
@@ -793,20 +797,56 @@ body.theme-dark .cm-quote {
 }
 
 .markdown-rendered table th,
-.markdown-rendered table td {
-    border: 1px solid var(--table-border);
-    padding: 8px 14px;
+.markdown-rendered table td,
+.markdown-source-view .cm-table-widget table th,
+.markdown-source-view .cm-table-widget table td {
+    min-width: 0;
+    border: 0;
+    border-right: 1px solid var(--table-border);
+    border-bottom: 1px solid var(--table-border);
+    padding: 10px 14px;
     text-align: left;
+    vertical-align: top;
+    line-height: 1.55;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
 }
 
-.markdown-rendered table th {
+.markdown-rendered table :is(th, td) code,
+.markdown-source-view .cm-table-widget table :is(th, td) code {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.markdown-rendered table th:last-child,
+.markdown-rendered table td:last-child,
+.markdown-source-view .cm-table-widget table th:last-child,
+.markdown-source-view .cm-table-widget table td:last-child {
+    border-right: 0;
+}
+
+.markdown-rendered table tr:last-child td,
+.markdown-source-view .cm-table-widget table tr:last-child td {
+    border-bottom: 0;
+}
+
+.markdown-rendered table th,
+.markdown-source-view .cm-table-widget table th {
     background-color: var(--table-header-background);
     font-weight: 600;
     color: var(--text-normal);
 }
 
-.markdown-rendered table tbody tr:nth-child(even) {
+.markdown-rendered table tbody tr:nth-child(even),
+.markdown-source-view .cm-table-widget table tbody tr:nth-child(even) {
     background-color: var(--table-row-alt-background);
+}
+
+.markdown-rendered table tbody tr:hover,
+.markdown-source-view .cm-table-widget table tbody tr:hover {
+    background-color: var(--background-modifier-hover);
 }
 
 /* Callout */
@@ -1459,6 +1499,23 @@ select:focus,
 .markdown-rendered img {
     border-radius: var(--radius-s);
     max-width: 100%;
+}
+
+/* Image embeds should not inherit the card treatment used by note embeds. */
+.markdown-source-view .internal-embed.image-embed,
+.markdown-rendered .internal-embed.image-embed {
+    display: block;
+    line-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.markdown-source-view .internal-embed.image-embed img,
+.markdown-rendered .internal-embed.image-embed img {
+    display: block;
 }
 
 /* Horizontal rule */
