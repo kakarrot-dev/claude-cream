@@ -31,7 +31,7 @@
 
 ## 界面预览
 
-以下均为真实客户端截图，左侧为 Light，右侧为 Dark。画面已裁去项目侧栏、个人路径与账号信息。
+本节均为真实客户端截图，左侧为 Light，右侧为 Dark。画面已裁去项目侧栏、个人路径与账号信息。
 
 ### Codex
 
@@ -57,6 +57,14 @@
 
 ![Ghostty 的 Claude Cream Light 与 Dark 主题对照](img/screenshots/ghostty-light-dark.png)
 
+## XHS 封面效果
+
+两张来自 XHS Studio 的 AI 生成概念封面，使用暖象牙、炭黑与琥珀色。文字参与场景表达：“停”成为实体焦点，“先别跑”与起跑动作呼应。制作方法见 [XHS 封面约束](themes/image-generation/xhs-cover-guidelines.md)。
+
+| 字形参与场景 | 对话呼应动作 |
+| --- | --- |
+| ![巨型琥珀色“停”字与画笔、纸人跑道共同构成的 XHS 封面](img/xhs/workflow-stop-block-v1.png) | ![“先别跑”展示字与起跑纸人动作呼应的 XHS 封面](img/xhs/workflow-stop-dialogue-v1.png) |
+
 ## 目录结构
 
 ```
@@ -69,10 +77,11 @@ claude-cream/
 │   ├── vscode/              # Cursor / VS Code 五模式主题
 │   ├── zed/                 # Zed Light + Dark 本地主题
 │   ├── website/             # Website 色彩主题（Light + Dark）
-│   └── image-generation/    # 插画、头像与壁纸生成提示词
+│   └── image-generation/    # 插画、头像、壁纸与 XHS 封面规范
 ├── img/
 │   ├── brand/               # 项目 Logo 与横幅
-│   └── screenshots/         # 客户端 Light / Dark 实机截图
+│   ├── screenshots/         # 客户端 Light / Dark 实机截图
+│   └── xhs/                 # AI 生成的 XHS 概念封面样例
 ├── tokens/                  # 跨平台共享设计 token（单一真源）
 └── scripts/                 # 无依赖跨平台校验
 ```
@@ -171,6 +180,8 @@ theme = light:claude-cream-light,dark:claude-cream-dark
 ### Image Generation
 
 组合使用 [`themes/image-generation/illustration-prompt-template.md`](themes/image-generation/illustration-prompt-template.md) 与 [`themes/image-generation/style.json`](themes/image-generation/style.json)，生成与 Website 一致的封面和编辑插画。同一目录还提供[个人社交头像](themes/image-generation/avatar-prompt-template.md)和[桌面或移动端壁纸](themes/image-generation/wallpaper-prompt-template.md)提示词。
+
+小红书（XHS）封面使用[专属制作约束](themes/image-generation/xhs-cover-guidelines.md)：准确文案与图像共同构图，保留 Claude Cream 品牌色，并检查整图与缩略图。XHS 封面允许生成展示字，网站插画继续使用无字底图。
 
 每个主题目录均提供独立 README，说明安装、映射关系与验证方式。
 

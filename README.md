@@ -35,7 +35,7 @@ Inspired by the [Claude.com](https://claude.com) visual language: layered warm s
 
 ## Interface Preview
 
-All images below are real client screenshots. Light is shown on the left and Dark on the right. Project sidebars, personal paths, and account details have been cropped out.
+Images in this section are real client screenshots. Light is shown on the left and Dark on the right. Project sidebars, personal paths, and account details have been cropped out.
 
 ### Codex
 
@@ -61,6 +61,14 @@ All images below are real client screenshots. Light is shown on the left and Dar
 
 ![Claude Cream Light and Dark themes in Ghostty](img/screenshots/ghostty-light-dark.png)
 
+## XHS Cover Examples
+
+Two AI-generated concept covers from XHS Studio, using warm ivory, charcoal, and amber. Lettering participates in the scene: “停” (stop) becomes a physical focal point, while “先别跑” (hold off on running) echoes the starting-line action. See the [XHS cover guidelines](themes/image-generation/xhs-cover-guidelines.md).
+
+| Lettering as a scene element | Dialogue and action |
+| --- | --- |
+| ![XHS cover with a large amber stop character, a brush, and paper runners](img/xhs/workflow-stop-block-v1.png) | ![XHS cover pairing bold dialogue lettering with paper runners at a starting line](img/xhs/workflow-stop-dialogue-v1.png) |
+
 ## What's Inside
 
 ```
@@ -73,10 +81,11 @@ claude-cream/
 │   ├── vscode/              # Five Cursor / VS Code themes
 │   ├── zed/                 # Zed Light + Dark local theme
 │   ├── website/             # Website Light + Dark color theme
-│   └── image-generation/    # Illustration, avatar, and wallpaper prompts
+│   └── image-generation/    # Illustration, avatar, wallpaper, and XHS cover guides
 ├── img/
 │   ├── brand/               # Project logo and banner
-│   └── screenshots/         # Real Light / Dark client screenshots
+│   ├── screenshots/         # Real Light / Dark client screenshots
+│   └── xhs/                 # AI-generated XHS concept cover examples
 ├── tokens/                  # Shared design tokens, single source of truth
 └── scripts/                 # Dependency-free cross-platform validation
 ```
@@ -175,6 +184,8 @@ Switch modes with `html[data-theme="light"]` and `html[data-theme="dark"]`. See 
 ### Image Generation
 
 Use [`themes/image-generation/illustration-prompt-template.md`](themes/image-generation/illustration-prompt-template.md) with [`themes/image-generation/style.json`](themes/image-generation/style.json) to create covers and editorial images that match the website. The same directory also includes prompts for [personal social avatars](themes/image-generation/avatar-prompt-template.md) and [desktop or mobile wallpapers](themes/image-generation/wallpaper-prompt-template.md).
+
+For Xiaohongshu (XHS) covers, follow the [cover guidelines](themes/image-generation/xhs-cover-guidelines.md): design accurate copy and imagery together, keep the Claude Cream palette, and inspect both the full image and a thumbnail. XHS covers may include generated lettering; website illustrations remain text-free.
 
 Each theme folder contains its own README with installation, mapping, and validation notes.
 

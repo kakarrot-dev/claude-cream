@@ -211,7 +211,7 @@ themes/
   obsidian/               Obsidian 主题 + Style Settings
   ghostty/                Ghostty 主题与主配置
   website/                Website Light/Dark 色彩主题
-  image-generation/      插画、个人社交头像与壁纸生成风格及提示词
+  image-generation/      插画、个人社交头像、壁纸与 XHS 封面规范
 img/                      Logo、横幅、效果图
 tasks/
   specs/                  功能规格
@@ -912,3 +912,7 @@ Git：
 - 编辑器表面映射自 `editor.light` / `editor.dark`，文本、边框和状态色映射自 `colors.light` / `colors.dark`。
 - 修改后至少运行 JSON 解析、schema 字段检查、Light / Dark 字段对称性、语法 token 映射检查和 `git diff --check`。
 - 无法实际打开 Zed 时，只能报告静态验证通过，导入与视觉验收保持未验证。
+
+### 21.7 XHS 封面制作约束
+
+- 新做或修改小红书（XHS）封面时，先读取并遵守 [`themes/image-generation/xhs-cover-guidelines.md`](themes/image-generation/xhs-cover-guidelines.md)，按本篇承诺共同设计文字与图像，并实际打开成图与缩略图验收。
