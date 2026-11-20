@@ -187,6 +187,8 @@ Use [`themes/image-generation/illustration-prompt-template.md`](themes/image-gen
 
 For Xiaohongshu (XHS) covers, follow the [cover guidelines](themes/image-generation/xhs-cover-guidelines.md): design accurate copy and imagery together, keep the Claude Cream palette, and inspect both the full image and a thumbnail. XHS covers may include generated lettering; website illustrations remain text-free.
 
+The guide and the two [cover examples](#xhs-cover-examples) are available on the [XHS cover guidelines branch](https://github.com/kakarrot-dev/claude-cream/tree/codex/xhs-cover-guidelines). They were added after the first stable release, [v1.0.0](https://github.com/kakarrot-dev/claude-cream/releases/tag/v1.0.0).
+
 Each theme folder contains its own README with installation, mapping, and validation notes.
 
 ## Validate

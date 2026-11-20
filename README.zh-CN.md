@@ -183,6 +183,8 @@ theme = light:claude-cream-light,dark:claude-cream-dark
 
 小红书（XHS）封面使用[专属制作约束](themes/image-generation/xhs-cover-guidelines.md)：准确文案与图像共同构图，保留 Claude Cream 品牌色，并检查整图与缩略图。XHS 封面允许生成展示字，网站插画继续使用无字底图。
 
+可在 [XHS 封面规范分支](https://github.com/kakarrot-dev/claude-cream/tree/codex/xhs-cover-guidelines) 查看规范和两张[概念封面](#xhs-封面效果)。它们在首个稳定版 [v1.0.0](https://github.com/kakarrot-dev/claude-cream/releases/tag/v1.0.0) 发布后加入。
+
 每个主题目录均提供独立 README，说明安装、映射关系与验证方式。
 
 ## 校验
